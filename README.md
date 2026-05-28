@@ -12,15 +12,15 @@
 
 | № | Тема | Задание | Технологии |
 |---|------|---------|------------|
-| 0 | Общее | Работа с Git | Git, GitHub, VS Code |
-| 1 | Тема 1 | Two Sum | Python, Hash Map |
-| 2 | Тема 2 | Вычисление деления | Python, configparser, pytest |
-| 3 | Тема 3 | Бинарное дерево. Рекурсия | Python, рекурсия, namedtuple, dataclass |
-| 5 | Тема 5 | Итераторы, генераторы, сопрограммы | Python, корутины, итераторы |
-| 6 | Тема 6 | Паттерн «Команда» | Python, ABC, паттерны, Undo/Redo |
-| 7 | Тема 7 | Паттерны проектирования (Декоратор) | Python, ABC, requests, yaml, csv |
-| 8 | Тема 8 | Паттерн «Одиночка» | Python, Singleton, matplotlib |
-| 9 | Тема 9 | Создание сайта-портфолио | MkDocs, Material, GitHub Pages |
+| 0 | Общее | [Работа с Git](https://blazeeed.github.io/prog_portfolio/programming/work0/) | Git, GitHub, VS Code |
+| 1 | Тема 1 | [Two Sum](https://blazeeed.github.io/prog_portfolio/programming/work1/) | Python, Hash Map |
+| 2 | Тема 2 | [Вычисление деления](https://blazeeed.github.io/prog_portfolio/programming/work2/) | Python, configparser, pytest |
+| 3 | Тема 3 | [Бинарное дерево. Рекурсия](https://blazeeed.github.io/prog_portfolio/programming/work3/) | Python, рекурсия, namedtuple, dataclass |
+| 5 | Тема 5 | [Итераторы, генераторы, сопрограммы](https://blazeeed.github.io/prog_portfolio/programming/work5/) | Python, корутины, итераторы |
+| 6 | Тема 6 | [Паттерн «Команда»](https://blazeeed.github.io/prog_portfolio/programming/work6/) | Python, ABC, паттерны, Undo/Redo |
+| 7 | Тема 7 | [Паттерны проектирования (Декоратор)](https://blazeeed.github.io/prog_portfolio/programming/work7/) | Python, ABC, requests, yaml, csv |
+| 8 | Тема 8 | [Паттерн «Одиночка»](https://blazeeed.github.io/prog_portfolio/programming/work8/) | Python, Singleton, matplotlib |
+| 9 | Тема 9 | [Создание сайта-портфолио](https://blazeeed.github.io/prog_portfolio/programming/work9/) | MkDocs, Material, GitHub Pages |
 
 ## Технологии
 

@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Решения лабораторных работ по дисциплине «Программирование»">
+      
+      
+        <meta name="author" content="Махов Владислав Анатольевич">
+      
+      
+      
+        <link rel="prev" href="../work1/">
+      
+      
+        <link rel="next" href="../work3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Тема 2. Вычисление деления - Портфолио по программированию</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Портфолио по программированию" class="md-header__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Портфолио по программированию
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 2. Вычисление деления
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Обо мне
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../work0/" class="md-tabs__link">
+          
+  
+  
+  Программирование
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contacts/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Контакты
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Портфолио по программированию" class="md-nav__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Портфолио по программированию
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обо мне
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Программирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Программирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общее. Работа с Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Two Sum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Вычисление деления
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Вычисление деления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Алгоритм вычисления
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл calculate.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingsini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Конфигурационный файл settings.ini
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_calculatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_calculate.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testcalculate-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestCalculate (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testloadparams-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestLoadParams (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Бинарное дерево. Рекурсия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Итераторы, генераторы, сопрограммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Паттерн «Команда»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Паттерны проектирования (Декоратор)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Паттерн «Одиночка»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Создание сайта-портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контакты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Алгоритм вычисления
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл calculate.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingsini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Конфигурационный файл settings.ini
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_calculatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_calculate.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testcalculate-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestCalculate (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testloadparams-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestLoadParams (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Решение задачи деления с использованием конфигурационного файла<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">Цель работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Разработать программу на языке Python, которая:</p>
+<ol>
+<li>Выполняет деление двух чисел с заданной точностью.</li>
+<li>Загружает значение точности из конфигурационного файла.</li>
+<li>Выполняет обработку ошибок через исключения.</li>
+<li>Использует модульное тестирование для проверки корректности работы.</li>
+</ol>
+<hr />
+<h2 id="_3">Постановка задачи<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Задание<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Написать функцию <code>calculate</code>, которая:</p>
+</li>
+<li>
+<p>принимает два операнда и параметр точности <code>epsilon</code>;</p>
+</li>
+<li>выполняет деление первого операнда на второй;</li>
+<li>бросает <code>ZeroDivisionError</code> при делении на ноль;</li>
+<li>бросает <code>ValueError</code> если <code>epsilon</code> вне допустимого диапазона.</li>
+</ol>
+<p>Допустимый диапазон значений:</p>
+<div class="highlight"><pre><span></span><code>10^-9 ≤ epsilon ≤ 10^-1
+</code></pre></div>
+<ol>
+<li>
+<p>Написать функцию <code>load_params</code>, которая:</p>
+</li>
+<li>
+<p>считывает значение <code>epsilon</code> из файла <code>settings.ini</code>;</p>
+</li>
+<li>бросает <code>FileNotFoundError</code> если файл не найден;</li>
+<li>
+<p>бросает <code>ValueError</code> если значение epsilon не является числом или вне диапазона.</p>
+</li>
+<li>
+<p>Реализовать тестирование с использованием <code>pytest</code>:</p>
+</li>
+</ol>
+<p>Для функции <code>calculate</code>:</p>
+<ul>
+<li>деление 1/2 и 1/1000;</li>
+<li>деление на ноль;</li>
+<li>epsilon вне допустимого диапазона;</li>
+<li>дробные операнды, отрицательные числа.</li>
+</ul>
+<p>Для функции <code>load_params</code>:</p>
+<ul>
+<li>успешное чтение из файла;</li>
+<li>отсутствие файла;</li>
+<li>неверный формат числа;</li>
+<li>epsilon вне диапазона.</li>
+</ul>
+<hr />
+<h2 id="_5">Описание решения<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Программа состоит из следующих частей:</p>
+<ol>
+<li>Функция <code>calculate</code> — выполняет деление с проверкой входных данных.</li>
+<li>Функция <code>load_params</code> — загружает параметры из конфигурационного файла.</li>
+<li>Конфигурационный файл <code>settings.ini</code> — хранит значение <code>epsilon</code>.</li>
+<li>Набор тестов <code>test_calculate.py</code> с использованием <code>pytest</code>.</li>
+</ol>
+<h3 id="_6">Алгоритм вычисления<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Количество знаков после запятой определяется из <code>epsilon</code> через логарифм:</p>
+<div class="highlight"><pre><span></span><code><span class="n">decimal_places</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">epsilon</span><span class="p">))</span>
+<span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">,</span> <span class="n">decimal_places</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>epsilon</th>
+<th>decimal_places</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>1</td>
+<td><code>1/2</code> → <code>0.5</code></td>
+</tr>
+<tr>
+<td>0.01</td>
+<td>2</td>
+<td><code>1/3</code> → <code>0.33</code></td>
+</tr>
+<tr>
+<td>0.001</td>
+<td>3</td>
+<td><code>1/1000</code> → <code>0.001</code></td>
+</tr>
+<tr>
+<td>0.0001</td>
+<td>4</td>
+<td>(по умолчанию)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">Листинг программы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="calculatepy">Файл <code>calculate.py</code><a class="headerlink" href="#calculatepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">configparser</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Делит a на b, результат округляется до точности epsilon.</span>
+<span class="sd">    epsilon должен быть в диапазоне (10**-9, 10**-1).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">1e-9</span> <span class="o">&lt;=</span> <span class="n">epsilon</span> <span class="o">&lt;=</span> <span class="mf">1e-1</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;epsilon=</span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s2"> вне допустимого диапазона (10**-9, 10**-1)&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;Деление на ноль недопустимо&quot;</span><span class="p">)</span>
+
+    <span class="n">decimal_places</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">epsilon</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">,</span> <span class="n">decimal_places</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_params</span><span class="p">(</span><span class="n">config_path</span><span class="o">=</span><span class="s2">&quot;settings.ini&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Считывает epsilon из конфигурационного файла и возвращает его.&quot;&quot;&quot;</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+    <span class="n">files_read</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">files_read</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Файл конфигурации &#39;</span><span class="si">{</span><span class="n">config_path</span><span class="si">}</span><span class="s2">&#39; не найден&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;DEFAULT&quot;</span><span class="p">][</span><span class="s2">&quot;epsilon&quot;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Некорректный формат epsilon в файле конфигурации: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">1e-9</span> <span class="o">&lt;=</span> <span class="n">epsilon</span> <span class="o">&lt;=</span> <span class="mf">1e-1</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;epsilon=</span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s2"> из конфигурации вне допустимого диапазона (10**-9, 10**-1)&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">epsilon</span>
+</code></pre></div>
+<hr />
+<h3 id="settingsini">Конфигурационный файл <code>settings.ini</code><a class="headerlink" href="#settingsini" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
+<span class="na">epsilon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.0001</span>
+</code></pre></div>
+<hr />
+<h3 id="test_calculatepy">Файл <code>test_calculate.py</code><a class="headerlink" href="#test_calculatepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">configparser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">calculate</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate</span><span class="p">,</span> <span class="n">load_params</span>
+
+
+<span class="c1"># ---------- Тесты для calculate ----------</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestCalculate</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_half</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;1/2 с epsilon=0.1 должен вернуть 0.5&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.5</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_one_thousandth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;1/1000 с epsilon=0.001 должен вернуть 0.001&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.001</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_division_by_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Деление на ноль должно выбрасывать ZeroDivisionError&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">):</span>
+            <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_epsilon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Деление с epsilon по умолчанию (0.0001)&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_float_operands</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Дробные операнды&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">==</span> <span class="mf">5.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_epsilon_too_large</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon &gt; 10**-1 должен выбрасывать ValueError&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_epsilon_too_small</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon &lt; 10**-9 должен выбрасывать ValueError&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_epsilon_valid_boundary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon на границе диапазона (0.1) не должен вызывать ошибку&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mf">0.5</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_operands</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отрицательные операнды&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mf">0.5</span>
+
+
+<span class="c1"># ---------- Тесты для load_params ----------</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestLoadParams</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_file_opens_for_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Файл конфигурации успешно открывается&quot;&quot;&quot;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">tmp_path</span> <span class="o">/</span> <span class="s2">&quot;settings.ini&quot;</span>
+        <span class="n">config_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">epsilon = 0.001</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">epsilon</span> <span class="o">==</span> <span class="mf">0.001</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_epsilon_in_valid_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon из конфига входит в допустимый диапазон&quot;&quot;&quot;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">tmp_path</span> <span class="o">/</span> <span class="s2">&quot;settings.ini&quot;</span>
+        <span class="n">config_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">epsilon = 0.00001</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="mf">1e-9</span> <span class="o">&lt;</span> <span class="n">epsilon</span> <span class="o">&lt;</span> <span class="mf">1e-1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_epsilon_out_of_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon вне диапазона выбрасывает ValueError&quot;&quot;&quot;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">tmp_path</span> <span class="o">/</span> <span class="s2">&quot;settings.ini&quot;</span>
+        <span class="n">config_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">epsilon = 0.5</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">load_params</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_invalid_number_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Некорректный формат числа в конфиге выбрасывает ValueError&quot;&quot;&quot;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">tmp_path</span> <span class="o">/</span> <span class="s2">&quot;settings.ini&quot;</span>
+        <span class="n">config_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">epsilon = abc</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">load_params</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_file_not_found</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отсутствующий файл выбрасывает FileNotFoundError&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">):</span>
+            <span class="n">load_params</span><span class="p">(</span><span class="s2">&quot;nonexistent_settings.ini&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_load_and_use_in_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;epsilon из конфига передаётся в calculate и работает корректно&quot;&quot;&quot;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">tmp_path</span> <span class="o">/</span> <span class="s2">&quot;settings.ini&quot;</span>
+        <span class="n">config_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">epsilon = 0.01</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.5</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+    <span class="n">pytest</span><span class="o">.</span><span class="n">main</span><span class="p">([</span><span class="vm">__file__</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">])</span>
+</code></pre></div>
+<hr />
+<h2 id="_8">Результаты тестирования<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="testcalculate-9">TestCalculate (9 тестов)<a class="headerlink" href="#testcalculate-9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_half</code></td>
+<td>1/2 с epsilon=0.1 → 0.5</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_one_thousandth</code></td>
+<td>1/1000 с epsilon=0.001 → 0.001</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_division_by_zero</code></td>
+<td>Деление на ноль → <code>ZeroDivisionError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_default_epsilon</code></td>
+<td>Деление с epsilon=0.0001 по умолчанию</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_float_operands</code></td>
+<td>2.5/0.5 с epsilon=0.01 → 5.0</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_epsilon_too_large</code></td>
+<td>epsilon=0.2 → <code>ValueError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_epsilon_too_small</code></td>
+<td>epsilon=1e-10 → <code>ValueError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_epsilon_valid_boundary</code></td>
+<td>epsilon=0.1 (граница) → без ошибки</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_negative_operands</code></td>
+<td>-1/2 → -0.5</td>
+<td>✅ PASSED</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testloadparams-6">TestLoadParams (6 тестов)<a class="headerlink" href="#testloadparams-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_file_opens_for_reading</code></td>
+<td>Файл открывается, epsilon читается</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_epsilon_in_valid_range</code></td>
+<td>epsilon входит в диапазон</td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_epsilon_out_of_range</code></td>
+<td>epsilon=0.5 → <code>ValueError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_invalid_number_format</code></td>
+<td>epsilon='abc' → <code>ValueError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_file_not_found</code></td>
+<td>Файл не найден → <code>FileNotFoundError</code></td>
+<td>✅ PASSED</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_load_and_use_in_calculate</code></td>
+<td>epsilon из конфига → calculate работает</td>
+<td>✅ PASSED</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>15 passed in 0.05s
+</code></pre></div>
+<hr />
+<h2 id="_9">Используемые библиотеки<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Библиотека</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>math</code></td>
+<td>Вычисление количества знаков через <code>math.log10</code></td>
+</tr>
+<tr>
+<td><code>configparser</code></td>
+<td>Работа с <code>.ini</code>-файлами</td>
+</tr>
+<tr>
+<td><code>pytest</code></td>
+<td>Модульное тестирование</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">Структура файлов<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>├── calculate.py       # Функции calculate и load_params
+├── settings.ini       # Конфигурационный файл с epsilon
+└── test_calculate.py  # Модульные тесты (pytest)
+</code></pre></div>
+<hr />
+<h2 id="_11">Вывод<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>В ходе выполнения работы была разработана программа для деления чисел с параметром точности <code>epsilon</code>, загружаемым из конфигурационного файла <code>settings.ini</code>.</p>
+<p>В программе реализованы:</p>
+<ul>
+<li>деление с проверкой входных данных и округлением по <code>epsilon</code> через <code>math.log10</code>;</li>
+<li>корректная обработка ошибок через исключения (<code>ValueError</code>, <code>ZeroDivisionError</code>, <code>FileNotFoundError</code>);</li>
+<li>загрузка параметров из <code>.ini</code>-файла через <code>configparser</code>;</li>
+<li>15 тестов с использованием <code>pytest</code>, покрывающих основные и граничные случаи.</li>
+</ul>
+<p>Программа успешно выполняет поставленные задачи и корректно обрабатывает исключительные ситуации.</p>
+<hr />
+<h2 id="_12">📁 Файлы проекта<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../lab2/calculate.py">calculate.py</a></td>
+<td>Функции <code>calculate</code> и <code>load_params</code></td>
+</tr>
+<tr>
+<td><a href="../lab2/settings.ini">settings.ini</a></td>
+<td>Конфигурационный файл с epsilon</td>
+</tr>
+<tr>
+<td><a href="../lab2/test_calculate.py">test_calculate.py</a></td>
+<td>Модульные тесты (pytest)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1974 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Решения лабораторных работ по дисциплине «Программирование»">
+      
+      
+        <meta name="author" content="Махов Владислав Анатольевич">
+      
+      
+      
+        <link rel="prev" href="../work7/">
+      
+      
+        <link rel="next" href="../work9/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Тема 8. Паттерн «Одиночка» - Портфолио по программированию</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Портфолио по программированию" class="md-header__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Портфолио по программированию
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 8. Паттерн «Одиночка»
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Обо мне
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../work0/" class="md-tabs__link">
+          
+  
+  
+  Программирование
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contacts/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Контакты
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Портфолио по программированию" class="md-nav__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Портфолио по программированию
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обо мне
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Программирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Программирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общее. Работа с Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Two Sum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Вычисление деления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Бинарное дерево. Рекурсия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Итераторы, генераторы, сопрограммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Паттерн «Команда»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Паттерны проектирования (Декоратор)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Паттерн «Одиночка»
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Паттерн «Одиночка»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Паттерн «Одиночка»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Формат данных API ЦБ РФ (XML)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_split_valuevalue_str" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вспомогательная функция _split_value(value_str)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetchcurrencies_ids_lst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод fetch(currencies_ids_lst)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize_currencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод visualize_currencies()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#currenciespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл currencies.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_currenciespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_currencies.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Создание сайта-портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контакты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Паттерн «Одиночка»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Формат данных API ЦБ РФ (XML)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_split_valuevalue_str" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вспомогательная функция _split_value(value_str)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetchcurrencies_ids_lst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод fetch(currencies_ids_lst)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize_currencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод visualize_currencies()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#currenciespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл currencies.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_currenciespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_currencies.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Паттерн «Одиночка» для курсов валют ЦБ РФ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">Цель работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Изучить применение шаблона проектирования «Одиночка» (Singleton) на языке Python.</p>
+<p>В рамках работы необходимо:</p>
+<ul>
+<li>реализовать метакласс <code>SingletonMeta</code>, гарантирующий единственность экземпляра;</li>
+<li>реализовать класс <code>CurrenciesLst</code> для получения курсов валют из API ЦБ РФ;</li>
+<li>реализовать метод <code>fetch()</code> для загрузки курсов по идентификаторам;</li>
+<li>реализовать визуализацию курсов через <code>matplotlib</code>;</li>
+<li>разработать тесты с использованием <code>unittest.mock</code>.</li>
+</ul>
+<hr />
+<h2 id="_3">Постановка задачи<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Задание<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Реализовать метакласс <code>SingletonMeta</code>:</li>
+<li>обеспечить создание единственного экземпляра класса;</li>
+<li>
+<p>повторные вызовы конструктора должны возвращать тот же объект.</p>
+</li>
+<li>
+<p>Реализовать класс <code>CurrenciesLst</code> (на основе <code>SingletonMeta</code>):</p>
+</li>
+<li>метод <code>fetch(currencies_ids_lst)</code> — загружает курсы из XML API ЦБ РФ;</li>
+<li>для корректных ID возвращает <code>{CharCode: (Name, (int_part, frac_part))}</code>;</li>
+<li>для некорректных ID возвращает <code>{id: None}</code>;</li>
+<li>
+<p>ограничение частоты запросов через <code>min_interval</code>.</p>
+</li>
+<li>
+<p>Реализовать метод <code>visualize_currencies()</code>:</p>
+</li>
+<li>строит столбчатый график курсов через <code>matplotlib</code>;</li>
+<li>сохраняет график в файл <code>.jpg</code>.</li>
+</ol>
+<p>Источник данных:</p>
+<div class="highlight"><pre><span></span><code>http://www.cbr.ru/scripts/XML_daily.asp
+</code></pre></div>
+<hr />
+<h2 id="_5">Теоретические сведения<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">Паттерн «Одиночка»<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Паттерн «Одиночка» гарантирует, что класс имеет только один экземпляр, и предоставляет глобальную точку доступа к нему.</p>
+<p>Реализация через метакласс — наиболее «питоновский» способ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SingletonMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="n">_instances</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="api-xml">Формат данных API ЦБ РФ (XML)<a class="headerlink" href="#api-xml" title="Permanent link">&para;</a></h3>
+<p>API возвращает XML-документ с узлами <code>&lt;Valute&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Valute</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;R01035&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;CharCode&gt;</span>GBP<span class="nt">&lt;/CharCode&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Name&gt;</span>Фунт<span class="w"> </span>стерлингов...<span class="nt">&lt;/Name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Nominal&gt;</span>1<span class="nt">&lt;/Nominal&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Value&gt;</span>113,2069<span class="nt">&lt;/Value&gt;</span>
+<span class="nt">&lt;/Valute&gt;</span>
+</code></pre></div>
+<p>Значение курса хранится с запятой как разделителем десятичных знаков. Функция <code>_split_value()</code> разбивает строку на целую и дробную части.</p>
+<hr />
+<h2 id="_7">Описание решения<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_split_valuevalue_str">Вспомогательная функция <code>_split_value(value_str)</code><a class="headerlink" href="#_split_valuevalue_str" title="Permanent link">&para;</a></h3>
+<p>Разбивает строку курса на кортеж <code>(целая_часть, дробная_часть)</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Входное значение</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'113,2069'</code></td>
+<td><code>('113', '2069')</code></td>
+</tr>
+<tr>
+<td><code>'90,0000'</code></td>
+<td><code>('90', '0000')</code></td>
+</tr>
+<tr>
+<td><code>'90'</code> (без запятой)</td>
+<td><code>('90', '0')</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fetchcurrencies_ids_lst">Метод <code>fetch(currencies_ids_lst)</code><a class="headerlink" href="#fetchcurrencies_ids_lst" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Ждёт min_interval с момента последнего запроса (throttle)
+2. GET http://www.cbr.ru/scripts/XML_daily.asp
+3. Парсит XML через ElementTree
+4. Для каждого ID в списке:
+   - Найден → добавляет {CharCode: (Name, (int_part, frac_part))}
+   - Не найден → добавляет {id: None}
+5. Обновляет cur_lst и возвращает результат
+</code></pre></div>
+<h3 id="visualize_currencies">Метод <code>visualize_currencies()</code><a class="headerlink" href="#visualize_currencies" title="Permanent link">&para;</a></h3>
+<p>Строит столбчатый график на основе <code>cur_lst</code> и сохраняет в <code>.jpg</code> файл.</p>
+<hr />
+<h2 id="_8">Листинг программы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="currenciespy">Файл <code>currencies.py</code><a class="headerlink" href="#currenciespy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Курсы валют ЦБ РФ с паттерном «Одиночка» (Singleton).</span>
+
+<span class="sd">Реализует:</span>
+<span class="sd">    SingletonMeta  — метакласс для паттерна «Одиночка»</span>
+<span class="sd">    CurrenciesLst  — класс-одиночка для работы с курсами валют</span>
+<span class="sd">    get_currencies — вспомогательная функция (совместимость с шаблоном)</span>
+
+<span class="sd">API ЦБ РФ: http://www.cbr.ru/scripts/XML_daily.asp</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xml.etree</span><span class="w"> </span><span class="kn">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;Agg&quot;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_split_value</span><span class="p">(</span><span class="n">value_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">value_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_parse_valute</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="n">valute_id</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">valute_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">charcode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;CharCode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">value_str</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">nominal_str</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Nominal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+
+    <span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span> <span class="o">=</span> <span class="n">_split_value</span><span class="p">(</span><span class="n">value_str</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">nominal_str</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">charcode</span><span class="p">:</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span><span class="p">),</span> <span class="n">nominal_str</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">charcode</span><span class="p">:</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span><span class="p">))}</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SingletonMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="n">_instances</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">type</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CurrenciesLst</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">SingletonMeta</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__min_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">min_interval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__last_request_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cur_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span>
+
+    <span class="nd">@cur_lst</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cur_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cur_lst должен быть списком&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">min_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__min_interval</span>
+
+    <span class="nd">@min_interval</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">min_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;min_interval не может быть отрицательным&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__min_interval</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">currencies_ids_lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_throttle</span><span class="p">()</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s2">&quot;http://www.cbr.ru/scripts/XML_daily.asp&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span>
+        <span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">found_ids</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;Valute&quot;</span><span class="p">):</span>
+            <span class="n">entry</span> <span class="o">=</span> <span class="n">_parse_valute</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">currencies_ids_lst</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">entry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">found_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">currencies_ids_lst</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">found_ids</span><span class="p">:</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">cid</span><span class="p">:</span> <span class="kc">None</span><span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_throttle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">__last_request_time</span>
+        <span class="k">if</span> <span class="n">elapsed</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__min_interval</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__min_interval</span> <span class="o">-</span> <span class="n">elapsed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__last_request_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">visualize_currencies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;currencies.jpg&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cur_lst</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">int_part</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">frac_part</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Нет данных для построения графика.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="n">bars</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;steelblue&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Курс (руб.)&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Курсы валют ЦБ РФ&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.15</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;График сохранён: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_currencies</span><span class="p">(</span><span class="n">currencies_ids_lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">currencies_ids_lst</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;R01035&quot;</span><span class="p">,</span> <span class="s2">&quot;R01335&quot;</span><span class="p">,</span> <span class="s2">&quot;R01700J&quot;</span><span class="p">]</span>
+    <span class="n">cl</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">(</span><span class="n">min_interval</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="n">cl</span><span class="o">.</span><span class="n">visualize_currencies</span><span class="p">(</span><span class="s2">&quot;currencies.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="test_currenciespy">Файл <code>test_currencies.py</code><a class="headerlink" href="#test_currenciespy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Тесты для модуля currencies.py.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">MagicMock</span><span class="p">,</span> <span class="n">patch</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">currencies</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CurrenciesLst</span><span class="p">,</span>
+    <span class="n">SingletonMeta</span><span class="p">,</span>
+    <span class="n">_split_value</span><span class="p">,</span>
+    <span class="n">get_currencies</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">SAMPLE_XML</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="s2">&lt;ValCurs Date=&quot;15.01.2024&quot; name=&quot;Foreign Currency Market&quot;&gt;</span>
+<span class="s2">  &lt;Valute ID=&quot;R01035&quot;&gt;</span>
+<span class="s2">    &lt;NumCode&gt;826&lt;/NumCode&gt;</span>
+<span class="s2">    &lt;CharCode&gt;GBP&lt;/CharCode&gt;</span>
+<span class="s2">    &lt;Nominal&gt;1&lt;/Nominal&gt;</span>
+<span class="s2">    &lt;Name&gt;Фунт стерлингов Соединенного королевства&lt;/Name&gt;</span>
+<span class="s2">    &lt;Value&gt;113,2069&lt;/Value&gt;</span>
+<span class="s2">    &lt;VunitRate&gt;113,2069&lt;/VunitRate&gt;</span>
+<span class="s2">  &lt;/Valute&gt;</span>
+<span class="s2">  &lt;Valute ID=&quot;R01335&quot;&gt;</span>
+<span class="s2">    &lt;NumCode&gt;398&lt;/NumCode&gt;</span>
+<span class="s2">    &lt;CharCode&gt;KZT&lt;/CharCode&gt;</span>
+<span class="s2">    &lt;Nominal&gt;100&lt;/Nominal&gt;</span>
+<span class="s2">    &lt;Name&gt;Казахстанских тенге&lt;/Name&gt;</span>
+<span class="s2">    &lt;Value&gt;19,8264&lt;/Value&gt;</span>
+<span class="s2">    &lt;VunitRate&gt;0,198264&lt;/VunitRate&gt;</span>
+<span class="s2">  &lt;/Valute&gt;</span>
+<span class="s2">  &lt;Valute ID=&quot;R01700J&quot;&gt;</span>
+<span class="s2">    &lt;NumCode&gt;949&lt;/NumCode&gt;</span>
+<span class="s2">    &lt;CharCode&gt;TRY&lt;/CharCode&gt;</span>
+<span class="s2">    &lt;Nominal&gt;1&lt;/Nominal&gt;</span>
+<span class="s2">    &lt;Name&gt;Турецких лир&lt;/Name&gt;</span>
+<span class="s2">    &lt;Value&gt;2,7100&lt;/Value&gt;</span>
+<span class="s2">    &lt;VunitRate&gt;2,7100&lt;/VunitRate&gt;</span>
+<span class="s2">  &lt;/Valute&gt;</span>
+<span class="s2">&lt;/ValCurs&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_make_mock_response</span><span class="p">(</span><span class="n">xml</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">SAMPLE_XML</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MagicMock</span><span class="p">:</span>
+    <span class="n">mock</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
+    <span class="n">mock</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">xml</span>
+    <span class="n">mock</span><span class="o">.</span><span class="n">raise_for_status</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">mock</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestSplitValue</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_normal_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_split_value</span><span class="p">(</span><span class="s2">&quot;113,2069&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;113&quot;</span><span class="p">,</span> <span class="s2">&quot;2069&quot;</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_fraction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_split_value</span><span class="p">(</span><span class="s2">&quot;90&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;90&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_split_value</span><span class="p">(</span><span class="s2">&quot;0,0000&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;0000&quot;</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestSingletonMeta</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_same_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_singleton_uses_metaclass</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">CurrenciesLst</span><span class="p">,</span> <span class="n">SingletonMeta</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestValidCurrencies</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_gbp_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01035&quot;</span><span class="p">])</span>
+        <span class="n">gbp_data</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GBP&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;Фунт&quot;</span><span class="p">,</span> <span class="n">gbp_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_gbp_value_in_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01035&quot;</span><span class="p">])</span>
+        <span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;GBP&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">int_part</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">frac_part</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertLess</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_try_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01700J&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;лир&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;TRY&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_try_value_in_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01700J&quot;</span><span class="p">])</span>
+        <span class="n">int_part</span><span class="p">,</span> <span class="n">frac_part</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;TRY&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">int_part</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">frac_part</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertLess</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestInvalidCurrencies</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_invalid_id_returns_none</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R9999&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">[{</span><span class="s2">&quot;R9999&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}])</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_mixed_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01035&quot;</span><span class="p">,</span> <span class="s2">&quot;R9999&quot;</span><span class="p">])</span>
+        <span class="n">codes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">codes</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;GBP&quot;</span><span class="p">,</span> <span class="n">codes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="s2">&quot;R9999&quot;</span><span class="p">])</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestNominal</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_kzt_stores_nominal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span><span class="o">.</span><span class="n">fetch</span><span class="p">([</span><span class="s2">&quot;R01335&quot;</span><span class="p">])</span>
+        <span class="n">kzt_data</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;KZT&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kzt_data</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">kzt_data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;100&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGettersSetters</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cl</span> <span class="o">=</span> <span class="n">CurrenciesLst</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_cur_lst_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">cur_lst</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_cur_lst_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;USD&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;Доллар&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;90&quot;</span><span class="p">,</span> <span class="s2">&quot;0000&quot;</span><span class="p">))}]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">cur_lst</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">cur_lst</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_cur_lst_setter_type_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">cur_lst</span> <span class="o">=</span> <span class="s2">&quot;не список&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_min_interval_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">min_interval</span> <span class="o">=</span> <span class="mf">2.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">min_interval</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_min_interval_negative_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cl</span><span class="o">.</span><span class="n">min_interval</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGetCurrenciesWrapper</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@patch</span><span class="p">(</span><span class="s2">&quot;currencies.requests.get&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_wrapper_returns_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_get</span><span class="p">:</span> <span class="n">MagicMock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mock_get</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">_make_mock_response</span><span class="p">()</span>
+        <span class="n">SingletonMeta</span><span class="o">.</span><span class="n">_instances</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">get_currencies</span><span class="p">([</span><span class="s2">&quot;R01035&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="_9">Результаты тестирования<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Класс</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_normal_value</code></td>
+<td><code>TestSplitValue</code></td>
+<td><code>'113,2069'</code> → <code>('113', '2069')</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_zero_fraction</code></td>
+<td><code>TestSplitValue</code></td>
+<td>Строка без запятой → <code>('90', '0')</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_zero_value</code></td>
+<td><code>TestSplitValue</code></td>
+<td><code>'0,0000'</code> → <code>('0', '0000')</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_same_instance</code></td>
+<td><code>TestSingletonMeta</code></td>
+<td>Два вызова конструктора → один объект</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_singleton_uses_metaclass</code></td>
+<td><code>TestSingletonMeta</code></td>
+<td>Используется метакласс <code>SingletonMeta</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_gbp_name</code></td>
+<td><code>TestValidCurrencies</code></td>
+<td>Название GBP содержит «Фунт»</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_gbp_value_in_range</code></td>
+<td><code>TestValidCurrencies</code></td>
+<td>Курс GBP в диапазоне 0–999</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_try_name</code></td>
+<td><code>TestValidCurrencies</code></td>
+<td>Название TRY содержит «лир»</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_try_value_in_range</code></td>
+<td><code>TestValidCurrencies</code></td>
+<td>Курс TRY в диапазоне 0–999</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_invalid_id_returns_none</code></td>
+<td><code>TestInvalidCurrencies</code></td>
+<td>Несуществующий ID → <code>{id: None}</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_mixed_ids</code></td>
+<td><code>TestInvalidCurrencies</code></td>
+<td>Корректный + некорректный ID</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_kzt_stores_nominal</code></td>
+<td><code>TestNominal</code></td>
+<td>KZT (номинал=100) хранит номинал</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>test_cur_lst_getter</code></td>
+<td><code>TestGettersSetters</code></td>
+<td><code>cur_lst</code> возвращает список</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>test_cur_lst_setter</code></td>
+<td><code>TestGettersSetters</code></td>
+<td>Установка нового списка</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>test_cur_lst_setter_type_error</code></td>
+<td><code>TestGettersSetters</code></td>
+<td>Не-список → <code>TypeError</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>test_min_interval_setter</code></td>
+<td><code>TestGettersSetters</code></td>
+<td>Установка нового <code>min_interval</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>test_min_interval_negative_raises</code></td>
+<td><code>TestGettersSetters</code></td>
+<td>Отрицательное значение → <code>ValueError</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>test_wrapper_returns_list</code></td>
+<td><code>TestGetCurrenciesWrapper</code></td>
+<td><code>get_currencies()</code> возвращает список</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Ran 18 tests in 0.010s
+
+OK
+</code></pre></div>
+<blockquote>
+<p>Тесты используют <code>unittest.mock.patch</code> — реальные HTTP-запросы к ЦБ РФ не выполняются.</p>
+</blockquote>
+<hr />
+<h2 id="_10">Используемые библиотеки<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Библиотека</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>xml.etree.ElementTree</code></td>
+<td>Парсинг XML-ответа от API ЦБ РФ</td>
+</tr>
+<tr>
+<td><code>requests</code></td>
+<td>HTTP-запросы к API</td>
+</tr>
+<tr>
+<td><code>matplotlib</code></td>
+<td>Построение столбчатого графика</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>Управление интервалами между запросами</td>
+</tr>
+<tr>
+<td><code>unittest.mock</code></td>
+<td>Mock-объекты для тестирования без сети</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">Структура файлов<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>├── currencies.py      # SingletonMeta, CurrenciesLst, get_currencies
+└── test_currencies.py # Модульные тесты с mock
+</code></pre></div>
+<hr />
+<h2 id="_12">Вывод<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>В ходе выполнения работы реализован паттерн «Одиночка» для получения курсов валют ЦБ РФ.</p>
+<p>В программе реализованы:</p>
+<ul>
+<li>метакласс <code>SingletonMeta</code>, гарантирующий единственность экземпляра через <code>_instances</code>;</li>
+<li>класс-одиночка <code>CurrenciesLst</code> с ограничением частоты запросов (<code>min_interval</code>);</li>
+<li>парсинг XML-ответа от API ЦБ РФ через <code>ElementTree</code>;</li>
+<li>поддержка валют с номиналом, отличным от 1 (например, KZT с номиналом 100);</li>
+<li>визуализация курсов через <code>matplotlib</code> с сохранением в <code>.jpg</code>;</li>
+<li>18 тестов с <code>unittest.mock</code>, покрывающих все компоненты.</li>
+</ul>
+<hr />
+<h2 id="_13">📁 Файлы проекта<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../lab8/currencies.py">currencies.py</a></td>
+<td><code>SingletonMeta</code>, <code>CurrenciesLst</code>, <code>get_currencies</code></td>
+</tr>
+<tr>
+<td><a href="../lab8/test_currencies.py">test_currencies.py</a></td>
+<td>Модульные тесты с mock</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

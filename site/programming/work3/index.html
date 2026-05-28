@@ -1,0 +1,2481 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Решения лабораторных работ по дисциплине «Программирование»">
+      
+      
+        <meta name="author" content="Махов Владислав Анатольевич">
+      
+      
+      
+        <link rel="prev" href="../work2/">
+      
+      
+        <link rel="next" href="../work5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Тема 3. Бинарное дерево. Рекурсия - Портфолио по программированию</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Портфолио по программированию" class="md-header__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Портфолио по программированию
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 3. Бинарное дерево. Рекурсия
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Обо мне
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../work0/" class="md-tabs__link">
+          
+  
+  
+  Программирование
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contacts/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Контакты
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Портфолио по программированию" class="md-nav__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Портфолио по программированию
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обо мне
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Программирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Программирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общее. Работа с Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Two Sum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Вычисление деления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Бинарное дерево. Рекурсия
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Бинарное дерево. Рекурсия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание (Вариант №10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример дерева (высота = 2, корень = 10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекурсия и бинарное дерево
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectionsnamedtuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections.namedtuple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectionsordereddict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections.OrderedDict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataclass
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary_treepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл binary_tree.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_binary_treepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_binary_tree.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testformulas-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFormulas — формулы потомков (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreedict-dict-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeDict — dict (11 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreenamedtuple-namedtuple-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeNamedTuple — namedtuple (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreeordereddict-ordereddict-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeOrderedDict — OrderedDict (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreedataclass-dataclass-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeDataclass — dataclass (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testtreeheight-tree_height-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestTreeHeight — tree_height (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testinorder-inorder-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestInorder — inorder (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Итераторы, генераторы, сопрограммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Паттерн «Команда»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Паттерны проектирования (Декоратор)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Паттерн «Одиночка»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Создание сайта-портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контакты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание (Вариант №10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример дерева (высота = 2, корень = 10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекурсия и бинарное дерево
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectionsnamedtuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections.namedtuple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectionsordereddict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections.OrderedDict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataclass
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary_treepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл binary_tree.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_binary_treepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_binary_tree.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testformulas-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFormulas — формулы потомков (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreedict-dict-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeDict — dict (11 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreenamedtuple-namedtuple-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeNamedTuple — namedtuple (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreeordereddict-ordereddict-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeOrderedDict — OrderedDict (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testgenbintreedataclass-dataclass-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestGenBinTreeDataclass — dataclass (9 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testtreeheight-tree_height-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestTreeHeight — tree_height (6 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testinorder-inorder-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestInorder — inorder (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Бинарное дерево. Рекурсия<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">Цель работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Изучить принципы построения бинарных деревьев и рекурсивных алгоритмов на языке Python.</p>
+<p>В рамках работы необходимо:</p>
+<ul>
+<li>реализовать рекурсивную функцию генерации бинарного дерева в четырёх вариантах хранения узлов;</li>
+<li>реализовать вспомогательные функции <code>tree_height</code> и <code>inorder</code>;</li>
+<li>разработать модульные тесты с использованием <code>unittest</code>.</li>
+</ul>
+<hr />
+<h2 id="_3">Постановка задачи<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="no10">Задание (Вариант №10)<a class="headerlink" href="#no10" title="Permanent link">&para;</a></h3>
+<p>Реализовать рекурсивную генерацию бинарного дерева:</p>
+<ul>
+<li><strong>Корень по умолчанию:</strong> <code>10</code></li>
+<li><strong>Высота по умолчанию:</strong> <code>5</code></li>
+<li><strong>Левый потомок:</strong> <code>root × 3 + 1</code></li>
+<li><strong>Правый потомок:</strong> <code>3 × root − 1</code></li>
+</ul>
+<p>Реализовать <strong>четыре варианта</strong> хранения узлов:</p>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>dict</code></td>
+<td>Вложенные словари <code>{"value": ..., "left": ..., "right": ...}</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>collections.namedtuple</code></td>
+<td>Именованный кортеж <code>TreeNode(value, left, right)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>collections.OrderedDict</code></td>
+<td>Упорядоченный словарь с гарантированным порядком ключей</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>dataclass</code></td>
+<td>Класс с аннотациями <code>BinaryTreeNode</code></td>
+</tr>
+</tbody>
+</table>
+<p>Дополнительно реализовать:
+- <code>tree_height(tree)</code> — вычисление высоты дерева;
+- <code>inorder(tree)</code> — обход дерева в порядке «левый → корень → правый».</p>
+<h3 id="2-10">Пример дерева (высота = 2, корень = 10)<a class="headerlink" href="#2-10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>            10
+           /   \
+         31     29
+</code></pre></div>
+<ul>
+<li>левый потомок: 10 × 3 + 1 = <strong>31</strong></li>
+<li>правый потомок: 3 × 10 − 1 = <strong>29</strong></li>
+</ul>
+<hr />
+<h2 id="_4">Теоретические сведения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">Рекурсия и бинарное дерево<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Бинарное дерево — структура данных, в которой каждый узел имеет не более двух потомков. Рекурсивное построение:</p>
+<div class="highlight"><pre><span></span><code>gen_bin_tree(height, root):
+    если height == 0  → вернуть None
+    иначе             → создать узел (root, левое поддерево, правое поддерево)
+                        где левое  = gen_bin_tree(height-1, root*3+1)
+                        и   правое = gen_bin_tree(height-1, 3*root-1)
+</code></pre></div>
+<h3 id="collectionsnamedtuple">collections.namedtuple<a class="headerlink" href="#collectionsnamedtuple" title="Permanent link">&para;</a></h3>
+<p><code>namedtuple</code> создаёт неизменяемый кортеж с именованными полями:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="n">TreeNode</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;TreeNode&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">])</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 10</span>
+<span class="c1"># node.value = 99  # AttributeError: нельзя изменить</span>
+</code></pre></div>
+<h3 id="collectionsordereddict">collections.OrderedDict<a class="headerlink" href="#collectionsordereddict" title="Permanent link">&para;</a></h3>
+<p><code>OrderedDict</code> гарантирует сохранение порядка добавления ключей (в Python 3.7+ обычный <code>dict</code> тоже сохраняет порядок, но <code>OrderedDict</code> явно выражает это намерение):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+<span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">node</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="kc">None</span>
+<span class="n">node</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>  <span class="c1"># [&#39;value&#39;, &#39;left&#39;, &#39;right&#39;]</span>
+</code></pre></div>
+<h3 id="dataclass">dataclass<a class="headerlink" href="#dataclass" title="Permanent link">&para;</a></h3>
+<p><code>@dataclass</code> автоматически генерирует <code>__init__</code>, <code>__repr__</code>, <code>__eq__</code> и другие методы:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BinaryTreeNode</span><span class="p">:</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">left</span><span class="p">:</span>  <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;BinaryTreeNode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;BinaryTreeNode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="_6">Листинг программы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="binary_treepy">Файл <code>binary_tree.py</code><a class="headerlink" href="#binary_treepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Построение бинарного дерева — вариант 10.</span>
+
+<span class="sd">Параметры варианта по умолчанию:</span>
+<span class="sd">    root   = 10</span>
+<span class="sd">    height = 5</span>
+<span class="sd">    left   = root * 3 + 1</span>
+<span class="sd">    right  = 3 * root - 1</span>
+
+<span class="sd">Реализованы четыре варианта хранения дерева:</span>
+<span class="sd">    1. dict              — базовый вариант</span>
+<span class="sd">    2. collections.namedtuple</span>
+<span class="sd">    3. collections.OrderedDict</span>
+<span class="sd">    4. dataclass</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">namedtuple</span><span class="p">,</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Константы варианта</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="n">_DEFAULT_ROOT</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">_DEFAULT_HEIGHT</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Формулы вычисления потомков (вариант 10)</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_left</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Возвращает значение левого потомка: root * 3 + 1.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">root</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_right</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Возвращает значение правого потомка: 3 * root - 1.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">root</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Вспомогательные типы</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="n">TreeNode</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;TreeNode&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">])</span>
+<span class="n">TreeNode</span><span class="o">.</span><span class="fm">__new__</span><span class="o">.</span><span class="vm">__defaults__</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># left и right по умолчанию None</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BinaryTreeNode</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Узел бинарного дерева на основе dataclass.&quot;&quot;&quot;</span>
+
+    <span class="n">value</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">left</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;BinaryTreeNode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;BinaryTreeNode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+
+<span class="n">DictTree</span> <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span>
+<span class="n">NTTree</span>   <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TreeNode</span><span class="p">]</span>
+<span class="n">ODTree</span>   <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="n">OrderedDict</span><span class="p">]</span>
+<span class="n">DCTree</span>   <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="n">BinaryTreeNode</span><span class="p">]</span>
+<span class="n">AnyTree</span>  <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">DictTree</span><span class="p">,</span> <span class="n">NTTree</span><span class="p">,</span> <span class="n">ODTree</span><span class="p">,</span> <span class="n">DCTree</span><span class="p">]</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># 1. dict</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_bin_tree</span><span class="p">(</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_HEIGHT</span><span class="p">,</span>
+    <span class="n">root</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_ROOT</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictTree</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Рекурсивно строит дерево в виде вложенных словарей.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">root</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span>  <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_left</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_right</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+    <span class="p">}</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># 2. namedtuple</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_bin_tree_namedtuple</span><span class="p">(</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_HEIGHT</span><span class="p">,</span>
+    <span class="n">root</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_ROOT</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NTTree</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Рекурсивно строит дерево, используя collections.namedtuple.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">root</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_left</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+        <span class="n">right</span><span class="o">=</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_right</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+    <span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># 3. OrderedDict</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_bin_tree_ordered_dict</span><span class="p">(</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_HEIGHT</span><span class="p">,</span>
+    <span class="n">root</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_ROOT</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ODTree</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Рекурсивно строит дерево, используя collections.OrderedDict.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">node</span><span class="p">:</span> <span class="n">OrderedDict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">root</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_left</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_right</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">node</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># 4. dataclass</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_bin_tree_dataclass</span><span class="p">(</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_HEIGHT</span><span class="p">,</span>
+    <span class="n">root</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">_DEFAULT_ROOT</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DCTree</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Рекурсивно строит дерево, используя узлы-dataclass.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">BinaryTreeNode</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">root</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_left</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+        <span class="n">right</span><span class="o">=</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">_right</span><span class="p">(</span><span class="n">root</span><span class="p">)),</span>
+    <span class="p">)</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Вспомогательные функции</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">AnyTree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Вычисляет фактическую высоту дерева рекурсивно.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tree</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]),</span> <span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">BinaryTreeNode</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>  <span class="c1"># namedtuple</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">tree_height</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Неподдерживаемый тип дерева: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">inorder</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">AnyTree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Обходит дерево в порядке in-order (левый → корень → правый).&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tree</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">inorder</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]]</span> <span class="o">+</span> <span class="n">inorder</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="p">(</span><span class="n">BinaryTreeNode</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">inorder</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">+</span> <span class="n">inorder</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Неподдерживаемый тип дерева: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="test_binary_treepy">Файл <code>test_binary_tree.py</code><a class="headerlink" href="#test_binary_treepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Тесты для модуля binary_tree (вариант 10).</span>
+
+<span class="sd">Покрывают:</span>
+<span class="sd">    - формулы вычисления потомков</span>
+<span class="sd">    - все четыре реализации (dict, namedtuple, OrderedDict, dataclass)</span>
+<span class="sd">    - вспомогательные функции tree_height и inorder</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">binary_tree</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BinaryTreeNode</span><span class="p">,</span>
+    <span class="n">TreeNode</span><span class="p">,</span>
+    <span class="n">_left</span><span class="p">,</span>
+    <span class="n">_right</span><span class="p">,</span>
+    <span class="n">gen_bin_tree</span><span class="p">,</span>
+    <span class="n">gen_bin_tree_dataclass</span><span class="p">,</span>
+    <span class="n">gen_bin_tree_namedtuple</span><span class="p">,</span>
+    <span class="n">gen_bin_tree_ordered_dict</span><span class="p">,</span>
+    <span class="n">inorder</span><span class="p">,</span>
+    <span class="n">tree_height</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestFormulas</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Тесты формул вычисления потомков варианта 10.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_from_root_10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_left</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">31</span><span class="p">)</span>   <span class="c1"># 10*3+1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_from_root_10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_right</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">29</span><span class="p">)</span>  <span class="c1"># 3*10-1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_from_root_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_left</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1"># 1*3+1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_from_root_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_right</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># 3*1-1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_from_root_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_left</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>     <span class="c1"># 0*3+1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_from_root_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_right</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 3*0-1</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGenBinTreeDict</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_zero_returns_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_returns_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="nb">dict</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_root_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_leaves_none_at_height_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;left&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">31</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;right&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">29</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_keys_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_params_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">()[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_params_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">()),</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_custom_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span>  <span class="mi">16</span><span class="p">)</span>  <span class="c1"># 5*3+1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">14</span><span class="p">)</span>  <span class="c1"># 3*5-1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_matches_actual</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">subTest</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="n">h</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGenBinTreeNamedTuple</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_zero_returns_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_returns_treenode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_root_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_leaves_none_at_height_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_immutability</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">99</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_matches_actual</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_params_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGenBinTreeOrderedDict</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_zero_returns_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_returns_ordered_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">OrderedDict</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_root_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_key_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;left&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">31</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="s2">&quot;right&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">29</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_matches_actual</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_params_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">()[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestGenBinTreeDataclass</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_zero_returns_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_returns_binary_tree_node</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">BinaryTreeNode</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_root_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_leaves_none_at_height_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_left_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_right_child_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_equality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_matches_actual</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_default_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">gen_bin_tree_dataclass</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestTreeHeight</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_none_returns_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_single_node_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_single_node_namedtuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_single_node_dataclass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_all_implementations_same_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">)),</span> <span class="n">h</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">)),</span> <span class="n">h</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">)),</span> <span class="n">h</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">tree_height</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">)),</span> <span class="n">h</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_unsupported_type_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="n">tree_height</span><span class="p">(</span><span class="s2">&quot;not a tree&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestInorder</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_none_returns_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_single_node</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_2_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_2_namedtuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_2_ordered_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_height_2_dataclass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_all_implementations_same_inorder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_namedtuple</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="n">expected</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_ordered_dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="n">expected</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">inorder</span><span class="p">(</span><span class="n">gen_bin_tree_dataclass</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)),</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_unsupported_type_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="n">inorder</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="_7">Результаты тестирования<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="testformulas-6">TestFormulas — формулы потомков (6 тестов)<a class="headerlink" href="#testformulas-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_left_from_root_10</code></td>
+<td><code>_left(10) == 31</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_right_from_root_10</code></td>
+<td><code>_right(10) == 29</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_left_from_root_1</code></td>
+<td><code>_left(1) == 4</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_right_from_root_1</code></td>
+<td><code>_right(1) == 2</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_left_from_root_0</code></td>
+<td><code>_left(0) == 1</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_right_from_root_0</code></td>
+<td><code>_right(0) == -1</code></td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testgenbintreedict-dict-11">TestGenBinTreeDict — dict (11 тестов)<a class="headerlink" href="#testgenbintreedict-dict-11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_height_zero_returns_none</code></td>
+<td>height=0 → None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_returns_dict</code></td>
+<td>height=1 → dict</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_root_value</code></td>
+<td><code>tree["value"] == 10</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_leaves_none_at_height_1</code></td>
+<td>left и right — None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_left_child_value</code></td>
+<td>левый потомок == 31</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_right_child_value</code></td>
+<td>правый потомок == 29</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_keys_present</code></td>
+<td>ключи: value, left, right</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_default_params_root</code></td>
+<td>корень по умолчанию == 10</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_default_params_height</code></td>
+<td>высота по умолчанию == 5</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_custom_root</code></td>
+<td>root=5: left=16, right=14</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_height_matches_actual</code></td>
+<td>высота 1..5 соответствует</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testgenbintreenamedtuple-namedtuple-9">TestGenBinTreeNamedTuple — namedtuple (9 тестов)<a class="headerlink" href="#testgenbintreenamedtuple-namedtuple-9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_height_zero_returns_none</code></td>
+<td>height=0 → None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_returns_treenode</code></td>
+<td>возвращает TreeNode</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_root_value</code></td>
+<td><code>.value == 10</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_leaves_none_at_height_1</code></td>
+<td>left, right — None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_left_child_value</code></td>
+<td><code>.left.value == 31</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_right_child_value</code></td>
+<td><code>.right.value == 29</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_immutability</code></td>
+<td>присвоение → AttributeError</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_height_matches_actual</code></td>
+<td>высота == 4</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_default_params_root</code></td>
+<td>корень по умолчанию == 10</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testgenbintreeordereddict-ordereddict-8">TestGenBinTreeOrderedDict — OrderedDict (8 тестов)<a class="headerlink" href="#testgenbintreeordereddict-ordereddict-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_height_zero_returns_none</code></td>
+<td>height=0 → None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_returns_ordered_dict</code></td>
+<td>возвращает OrderedDict</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_root_value</code></td>
+<td><code>["value"] == 10</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_key_order</code></td>
+<td>порядок ключей: value, left, right</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_left_child_value</code></td>
+<td>левый потомок == 31</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_right_child_value</code></td>
+<td>правый потомок == 29</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_height_matches_actual</code></td>
+<td>высота == 3</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_default_params_root</code></td>
+<td>корень по умолчанию == 10</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testgenbintreedataclass-dataclass-9">TestGenBinTreeDataclass — dataclass (9 тестов)<a class="headerlink" href="#testgenbintreedataclass-dataclass-9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_height_zero_returns_none</code></td>
+<td>height=0 → None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_returns_binary_tree_node</code></td>
+<td>возвращает BinaryTreeNode</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_root_value</code></td>
+<td><code>.value == 10</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_leaves_none_at_height_1</code></td>
+<td>left, right — None</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_left_child_value</code></td>
+<td><code>.left.value == 31</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_right_child_value</code></td>
+<td><code>.right.value == 29</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_equality</code></td>
+<td>два одинаковых дерева равны</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_height_matches_actual</code></td>
+<td>высота == 5</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_default_params</code></td>
+<td>root=10, height=5</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testtreeheight-tree_height-6">TestTreeHeight — tree_height (6 тестов)<a class="headerlink" href="#testtreeheight-tree_height-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_none_returns_0</code></td>
+<td>None → 0</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_single_node_dict</code></td>
+<td>dict h=1 → 1</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_single_node_namedtuple</code></td>
+<td>namedtuple h=1 → 1</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_single_node_dataclass</code></td>
+<td>dataclass h=1 → 1</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_all_implementations_same_height</code></td>
+<td>все 4 типа: h=4</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_unsupported_type_raises</code></td>
+<td>строка → TypeError</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testinorder-inorder-8">TestInorder — inorder (8 тестов)<a class="headerlink" href="#testinorder-inorder-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_none_returns_empty</code></td>
+<td>None → []</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_single_node</code></td>
+<td>h=1 → [10]</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_height_2_dict</code></td>
+<td>h=2 dict → [31, 10, 29]</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_height_2_namedtuple</code></td>
+<td>h=2 namedtuple → [31, 10, 29]</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_height_2_ordered_dict</code></td>
+<td>h=2 OrderedDict → [31, 10, 29]</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_height_2_dataclass</code></td>
+<td>h=2 dataclass → [31, 10, 29]</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_all_implementations_same_inorder</code></td>
+<td>все 4 типа: h=3 одинаковы</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_unsupported_type_raises</code></td>
+<td>int → TypeError</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Ran 57 tests in 0.XXXs
+
+OK
+</code></pre></div>
+<hr />
+<h2 id="_8">Используемые библиотеки<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Библиотека</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>collections.namedtuple</code></td>
+<td>Неизменяемый именованный кортеж <code>TreeNode</code></td>
+</tr>
+<tr>
+<td><code>collections.OrderedDict</code></td>
+<td>Словарь с гарантированным порядком ключей</td>
+</tr>
+<tr>
+<td><code>dataclasses</code></td>
+<td>Автогенерация <code>__init__</code>, <code>__eq__</code>, <code>__repr__</code> для <code>BinaryTreeNode</code></td>
+</tr>
+<tr>
+<td><code>typing</code></td>
+<td>Аннотации типов (<code>Optional</code>, <code>Union</code>)</td>
+</tr>
+<tr>
+<td><code>unittest</code></td>
+<td>Модульное тестирование</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">Структура файлов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>lab3/
+├── binary_tree.py       # Четыре реализации + tree_height + inorder
+└── test_binary_tree.py  # 57 тестов (7 классов)
+</code></pre></div>
+<hr />
+<h2 id="_10">Вывод<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>В ходе работы реализована рекурсивная генерация бинарного дерева по <strong>Варианту №10</strong> (корень=10, высота=5, левый=<code>root×3+1</code>, правый=<code>3×root−1</code>) в четырёх вариантах хранения:</p>
+<ul>
+<li><code>gen_bin_tree()</code> — вложенные словари <code>dict</code>;</li>
+<li><code>gen_bin_tree_namedtuple()</code> — неизменяемый <code>TreeNode</code> через <code>namedtuple</code>;</li>
+<li><code>gen_bin_tree_ordered_dict()</code> — <code>OrderedDict</code> с фиксированным порядком ключей;</li>
+<li><code>gen_bin_tree_dataclass()</code> — класс <code>BinaryTreeNode</code> с <code>@dataclass</code>.</li>
+</ul>
+<p>Реализованы вспомогательные функции <code>tree_height()</code> и <code>inorder()</code>, поддерживающие все четыре типа. Разработаны <strong>57 модульных тестов</strong> в 7 классах, покрывающих формулы потомков, все реализации, граничные случаи и обработку ошибок.</p>
+<hr />
+<h2 id="_11">📁 Файлы проекта<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../lab3/binary_tree.py">binary_tree.py</a></td>
+<td>Четыре реализации дерева + вспомогательные функции</td>
+</tr>
+<tr>
+<td><a href="../lab3/test_binary_tree.py">test_binary_tree.py</a></td>
+<td>57 модульных тестов (7 классов)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

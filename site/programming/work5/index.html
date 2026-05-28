@@ -1,0 +1,2250 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Решения лабораторных работ по дисциплине «Программирование»">
+      
+      
+        <meta name="author" content="Махов Владислав Анатольевич">
+      
+      
+      
+        <link rel="prev" href="../work3/">
+      
+      
+        <link rel="next" href="../work6/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Тема 5. Итераторы, генераторы, сопрограммы - Портфолио по программированию</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Портфолио по программированию" class="md-header__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Портфолио по программированию
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 5. Итераторы, генераторы, сопрограммы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Обо мне
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../work0/" class="md-tabs__link">
+          
+  
+  
+  Программирование
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contacts/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Контакты
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Портфолио по программированию" class="md-nav__button md-logo" aria-label="Портфолио по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Портфолио по программированию
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обо мне
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Программирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Программирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общее. Работа с Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Two Sum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Вычисление деления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Бинарное дерево. Рекурсия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Итераторы, генераторы, сопрограммы
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Итераторы, генераторы, сопрограммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-my_genn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание 1 — корутина my_genn()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Задание 1 — корутина my_genn()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример использования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fibonacchilst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание 2 — класс-итератор FibonacchiLst
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Задание 2 — класс-итератор FibonacchiLst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример использования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сопрограммы (корутины)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итераторы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Числа Фибоначчи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание алгоритмов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание алгоритмов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_is_fibonaccin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _is_fibonacci(n) — проверка числа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_fib_listn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _fib_list(n) — генерация списка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my_genn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Корутина my_genn()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-fibonacchilst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Класс-итератор FibonacchiLst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fibpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл fib.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_fibpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_fib.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testisfibonacci-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestIsFibonacci (11 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testfiblist-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFibList (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testmygenn-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestMyGenn (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testfibonacchilst-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFibonacchiLst (12 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Паттерн «Команда»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Паттерны проектирования (Декоратор)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Паттерн «Одиночка»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Создание сайта-портфолио
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контакты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-my_genn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание 1 — корутина my_genn()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Задание 1 — корутина my_genn()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример использования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fibonacchilst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задание 2 — класс-итератор FibonacchiLst
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Задание 2 — класс-итератор FibonacchiLst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример использования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теоретические сведения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теоретические сведения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сопрограммы (корутины)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итераторы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Числа Фибоначчи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание алгоритмов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание алгоритмов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_is_fibonaccin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _is_fibonacci(n) — проверка числа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_fib_listn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _fib_list(n) — генерация списка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my_genn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Корутина my_genn()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-fibonacchilst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Класс-итератор FibonacchiLst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Листинг программы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Листинг программы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fibpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл fib.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_fibpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Файл test_fib.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты тестирования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результаты тестирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testisfibonacci-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestIsFibonacci (11 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testfiblist-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFibList (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testmygenn-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestMyGenn (8 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testfibonacchilst-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TestFibonacchiLst (12 тестов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемые библиотеки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Файлы проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-">Числа Фибоначчи: корутина и класс-итератор<a class="headerlink" href="#-" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Цель работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Изучить работу с итераторами, генераторами и сопрограммами (корутинами) на языке Python.</p>
+<p>В рамках работы необходимо:</p>
+<ul>
+<li>реализовать корутину <code>my_genn()</code>, принимающую число через <code>send()</code> и возвращающую список первых n чисел Фибоначчи;</li>
+<li>реализовать класс-итератор <code>FibonacchiLst</code>, который из переданного списка извлекает только числа Фибоначчи;</li>
+<li>реализовать вспомогательные функции для проверки принадлежности числа к ряду Фибоначчи;</li>
+<li>разработать модульные тесты с использованием <code>unittest</code>.</li>
+</ul>
+<hr />
+<h2 id="_2">Постановка задачи<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-my_genn">Задание 1 — корутина <code>my_genn()</code><a class="headerlink" href="#1-my_genn" title="Permanent link">&para;</a></h3>
+<p>Реализовать корутину, которая:</p>
+<ul>
+<li>принимает число <code>n</code> через метод <code>send()</code>;</li>
+<li>возвращает список первых <code>n</code> чисел последовательности Фибоначчи (начиная с 0);</li>
+<li>работает в бесконечном цикле до явного завершения.</li>
+</ul>
+<h4 id="_3">Пример использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">gen</span> <span class="o">=</span> <span class="n">my_genn</span><span class="p">()</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>          <span class="c1"># инициализация корутины</span>
+<span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>        <span class="c1"># → [0, 1, 1]</span>
+<span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>        <span class="c1"># → [0, 1, 1, 2, 3]</span>
+<span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>        <span class="c1"># → [0, 1, 1, 2, 3, 5, 8, 13]</span>
+</code></pre></div>
+<h3 id="2-fibonacchilst">Задание 2 — класс-итератор <code>FibonacchiLst</code><a class="headerlink" href="#2-fibonacchilst" title="Permanent link">&para;</a></h3>
+<p>Реализовать класс-итератор, который:</p>
+<ul>
+<li>принимает список целых чисел;</li>
+<li>при итерации возвращает только те элементы, которые принадлежат ряду Фибоначчи;</li>
+<li>реализует методы <code>__iter__</code> и <code>__next__</code>.</li>
+</ul>
+<h4 id="_4">Пример использования<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>  <span class="c1"># → [0, 1, 2, 3, 5, 8, 1]</span>
+</code></pre></div>
+<hr />
+<h2 id="_5">Теоретические сведения<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">Сопрограммы (корутины)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Корутина — это специальный тип генератора, который может не только отдавать значения через <code>yield</code>, но и принимать значения через <code>send()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">coroutine</span><span class="p">():</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="k">yield</span>          <span class="c1"># ожидает значение через send()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">process</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+<p>Перед первым вызовом <code>send()</code> необходимо инициализировать корутину вызовом <code>next()</code>.</p>
+<h3 id="_7">Итераторы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Итератор — это объект, реализующий методы <code>__iter__</code> и <code>__next__</code>. Метод <code>__next__</code> возвращает следующий элемент или вызывает <code>StopIteration</code>, когда элементы исчерпаны.</p>
+<h3 id="_8">Числа Фибоначчи<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Число <code>n</code> является числом Фибоначчи тогда и только тогда, когда одно из выражений <code>(5n² + 4)</code> или <code>(5n² − 4)</code> является точным квадратом:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_perfect_square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">==</span> <span class="n">x</span>
+
+<span class="n">is_fib</span> <span class="o">=</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="_9">Описание алгоритмов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_is_fibonaccin"><code>_is_fibonacci(n)</code> — проверка числа<a class="headerlink" href="#_is_fibonaccin" title="Permanent link">&para;</a></h3>
+<p>Проверяет, является ли неотрицательное целое число числом Фибоначчи, используя свойство идеального квадрата.</p>
+<table>
+<thead>
+<tr>
+<th>Входное значение</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0, 1, 2, 3, 5, 8, 13, 21, ...</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td>4, 6, 7, 9, 10, ...</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td>Отрицательные числа</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_fib_listn"><code>_fib_list(n)</code> — генерация списка<a class="headerlink" href="#_fib_listn" title="Permanent link">&para;</a></h3>
+<p>Строит список первых <code>n</code> чисел Фибоначчи итеративно:</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>[0]</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>[0, 1]</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>[0, 1, 1]</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>[0, 1, 1, 2, 3, 5, 8, 13]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="my_genn">Корутина <code>my_genn()</code><a class="headerlink" href="#my_genn" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. yield None          ← инициализация (next(gen))
+2. Ожидает n через send(n)
+3. Вычисляет _fib_list(n)
+4. yield результат
+5. Переходит к шагу 2
+</code></pre></div>
+<h3 id="-fibonacchilst">Класс-итератор <code>FibonacchiLst</code><a class="headerlink" href="#-fibonacchilst" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Хранит исходный список и текущий индекс
+2. __next__(): проходит по элементам с текущей позиции
+3. Возвращает первый элемент, являющийся числом Фибоначчи
+4. StopIteration — когда список исчерпан
+</code></pre></div>
+<hr />
+<h2 id="_10">Листинг программы<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="fibpy">Файл <code>fib.py</code><a class="headerlink" href="#fibpy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Числа Фибоначчи: корутина и класс-итератор.</span>
+
+<span class="sd">Задание 1 — корутина my_genn():</span>
+<span class="sd">    Принимает число n через send() и возвращает список первых n чисел</span>
+<span class="sd">    последовательности Фибоначчи.</span>
+
+<span class="sd">Задание 2 — класс FibonacchiLst:</span>
+<span class="sd">    Из переданного списка извлекает только элементы, принадлежащие</span>
+<span class="sd">    последовательности Фибоначчи.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Iterator</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_perfect_square</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">==</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fib_list</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">my_genn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="k">yield</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">_fib_list</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FibonacchiLst</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lst</span> <span class="o">=</span> <span class="n">lst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lst</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">_is_fibonacci</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">value</span>
+        <span class="k">raise</span> <span class="ne">StopIteration</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Задание 1: корутина my_genn() ===&quot;</span><span class="p">)</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">my_genn</span><span class="p">()</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;send(3) -&gt; </span><span class="si">{</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;send(5) -&gt; </span><span class="si">{</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;send(8) -&gt; </span><span class="si">{</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Задание 2: FibonacchiLst ===&quot;</span><span class="p">)</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Исходный список : </span><span class="si">{</span><span class="n">lst</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Числа Фибоначчи : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="test_fibpy">Файл <code>test_fib.py</code><a class="headerlink" href="#test_fibpy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_is_fibonacci</span><span class="p">,</span> <span class="n">_fib_list</span><span class="p">,</span> <span class="n">my_genn</span><span class="p">,</span> <span class="n">FibonacchiLst</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestIsFibonacci</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_one_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_two_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_three_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_five_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_eight_is_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_four_is_not_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_six_is_not_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_is_not_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_large_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">144</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_large_non_fib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">_is_fibonacci</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestFibList</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_one_element</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_two_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_three_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_five_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_eight_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_length_matches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">subTest</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_fib_list</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span> <span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestMyGenn</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gen</span> <span class="o">=</span> <span class="n">my_genn</span><span class="p">()</span>
+        <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_8</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_0_returns_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_multiple_sends</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_is_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">GeneratorType</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestFibonacchiLst</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_main_example</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">(</span><span class="n">lst</span><span class="p">)),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_empty_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([])),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_single_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">0</span><span class="p">])),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_two_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_repeated_ones</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_no_fibonacci_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])),</span> <span class="p">[])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_all_fibonacci_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_is_iterable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fib_iter</span> <span class="o">=</span> <span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIs</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">fib_iter</span><span class="p">),</span> <span class="n">fib_iter</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_stop_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fib_iter</span> <span class="o">=</span> <span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+        <span class="nb">next</span><span class="p">(</span><span class="n">fib_iter</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">StopIteration</span><span class="p">):</span>
+            <span class="nb">next</span><span class="p">(</span><span class="n">fib_iter</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_for_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">]):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_large_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="mi">144</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">233</span><span class="p">])),</span> <span class="p">[</span><span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_numbers_excluded</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">FibonacchiLst</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="_11">Результаты тестирования<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="testisfibonacci-11">TestIsFibonacci (11 тестов)<a class="headerlink" href="#testisfibonacci-11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_zero_is_fib</code></td>
+<td>0 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_one_is_fib</code></td>
+<td>1 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_two_is_fib</code></td>
+<td>2 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_three_is_fib</code></td>
+<td>3 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_five_is_fib</code></td>
+<td>5 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_eight_is_fib</code></td>
+<td>8 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_four_is_not_fib</code></td>
+<td>4 не является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_six_is_not_fib</code></td>
+<td>6 не является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_negative_is_not_fib</code></td>
+<td>-1 не является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_large_fib</code></td>
+<td>144 является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_large_non_fib</code></td>
+<td>100 не является числом Фибоначчи</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testfiblist-8">TestFibList (8 тестов)<a class="headerlink" href="#testfiblist-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_zero_elements</code></td>
+<td><code>_fib_list(0)</code> → <code>[]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_negative_elements</code></td>
+<td><code>_fib_list(-5)</code> → <code>[]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_one_element</code></td>
+<td><code>_fib_list(1)</code> → <code>[0]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_two_elements</code></td>
+<td><code>_fib_list(2)</code> → <code>[0, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_three_elements</code></td>
+<td><code>_fib_list(3)</code> → <code>[0, 1, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_five_elements</code></td>
+<td><code>_fib_list(5)</code> → <code>[0, 1, 1, 2, 3]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_eight_elements</code></td>
+<td><code>_fib_list(8)</code> → <code>[0, 1, 1, 2, 3, 5, 8, 13]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_length_matches</code></td>
+<td>Длина списка совпадает с n</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testmygenn-8">TestMyGenn (8 тестов)<a class="headerlink" href="#testmygenn-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_send_3</code></td>
+<td><code>send(3)</code> → <code>[0, 1, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_send_5</code></td>
+<td><code>send(5)</code> → <code>[0, 1, 1, 2, 3]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_send_8</code></td>
+<td><code>send(8)</code> → <code>[0, 1, 1, 2, 3, 5, 8, 13]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_send_1</code></td>
+<td><code>send(1)</code> → <code>[0]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_send_2</code></td>
+<td><code>send(2)</code> → <code>[0, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_send_0_returns_empty</code></td>
+<td><code>send(0)</code> → <code>[]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_multiple_sends</code></td>
+<td>Несколько последовательных вызовов <code>send()</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_is_generator</code></td>
+<td>Объект является генератором (<code>GeneratorType</code>)</td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testfibonacchilst-12">TestFibonacchiLst (12 тестов)<a class="headerlink" href="#testfibonacchilst-12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Тест</th>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>test_main_example</code></td>
+<td><code>[0,1,2,3,4,5,6,7,8,9,1]</code> → <code>[0,1,2,3,5,8,1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>test_empty_list</code></td>
+<td>Пустой список → <code>[]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>test_single_zero</code></td>
+<td><code>[0]</code> → <code>[0]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>test_two_elements</code></td>
+<td><code>[0, 1]</code> → <code>[0, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>test_repeated_ones</code></td>
+<td><code>[1, 1]</code> → <code>[1, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>test_no_fibonacci_numbers</code></td>
+<td><code>[4, 6, 7, 9]</code> → <code>[]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>test_all_fibonacci_numbers</code></td>
+<td>Все числа Фибоначчи → без изменений</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>test_is_iterable</code></td>
+<td><code>iter(obj) is obj</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>test_stop_iteration</code></td>
+<td><code>StopIteration</code> после исчерпания</td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>test_for_loop</code></td>
+<td>Работа в цикле <code>for</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>test_large_numbers</code></td>
+<td><code>[144, 100, 233]</code> → <code>[144, 233]</code></td>
+<td>✅ OK</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>test_negative_numbers_excluded</code></td>
+<td><code>[-1, 0, -2, 1]</code> → <code>[0, 1]</code></td>
+<td>✅ OK</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Ran 39 tests in 0.002s
+
+OK
+</code></pre></div>
+<hr />
+<h2 id="_12">Используемые библиотеки<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Библиотека</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>typing</code></td>
+<td>Аннотации типов (<code>Generator</code>, <code>Iterator</code>)</td>
+</tr>
+<tr>
+<td><code>unittest</code></td>
+<td>Модульное тестирование</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_13">Структура файлов<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>├── fib.py          # Корутина my_genn() и итератор FibonacchiLst
+└── test_fib.py     # Модульные тесты (unittest)
+</code></pre></div>
+<hr />
+<h2 id="_14">Вывод<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>В ходе выполнения работы реализованы два инструмента для работы с числами Фибоначчи:</p>
+<ul>
+<li>корутина <code>my_genn()</code>, принимающая число <code>n</code> через <code>send()</code> и возвращающая список первых <code>n</code> чисел Фибоначчи;</li>
+<li>класс-итератор <code>FibonacchiLst</code>, фильтрующий числа Фибоначчи из произвольного списка.</li>
+</ul>
+<p>Для проверки принадлежности числа к ряду Фибоначчи используется свойство идеального квадрата: O(1) по времени и памяти. Генерация списка выполняется итеративно за O(n).</p>
+<p>Разработаны 39 модульных тестов (unittest), охватывающих граничные и нестандартные случаи.</p>
+<hr />
+<h2 id="_15">📁 Файлы проекта<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../lab5/fib.py">fib.py</a></td>
+<td>Корутина <code>my_genn()</code> и итератор <code>FibonacchiLst</code></td>
+</tr>
+<tr>
+<td><a href="../lab5/test_fib.py">test_fib.py</a></td>
+<td>Модульные тесты</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

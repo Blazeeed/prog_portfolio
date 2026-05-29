@@ -12,8 +12,8 @@ from collections import OrderedDict
 from binary_tree import (
     BinaryTreeNode,
     TreeNode,
-    _left,
-    _right,
+    calc_left,
+    calc_right,
     gen_bin_tree,
     gen_bin_tree_dataclass,
     gen_bin_tree_namedtuple,
@@ -23,33 +23,33 @@ from binary_tree import (
 )
 
 
-class TestFormulas(unittest.TestCase):
+class TestChildFormulas(unittest.TestCase):
     """Тесты формул вычисления потомков варианта 10."""
 
     def test_left_from_root_10(self):
-        self.assertEqual(_left(10), 31)   # 10*3+1
+        self.assertEqual(calc_left(10), 31)   # 10*3+1
 
     def test_right_from_root_10(self):
-        self.assertEqual(_right(10), 29)  # 3*10-1
+        self.assertEqual(calc_right(10), 29)  # 3*10-1
 
     def test_left_from_root_1(self):
-        self.assertEqual(_left(1), 4)     # 1*3+1
+        self.assertEqual(calc_left(1), 4)     # 1*3+1
 
     def test_right_from_root_1(self):
-        self.assertEqual(_right(1), 2)    # 3*1-1
+        self.assertEqual(calc_right(1), 2)    # 3*1-1
 
     def test_left_from_root_0(self):
-        self.assertEqual(_left(0), 1)     # 0*3+1
+        self.assertEqual(calc_left(0), 1)     # 0*3+1
 
     def test_right_from_root_0(self):
-        self.assertEqual(_right(0), -1)   # 3*0-1
+        self.assertEqual(calc_right(0), -1)   # 3*0-1
 
 
 # ---------------------------------------------------------------------------
 # dict
 # ---------------------------------------------------------------------------
 
-class TestGenBinTreeDict(unittest.TestCase):
+class TestDictImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree(height=0, root=10))
@@ -61,9 +61,9 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree(height=1, root=10)["value"], 10)
 
     def test_leaves_none_at_height_1(self):
-        tree = gen_bin_tree(height=1, root=10)
-        self.assertIsNone(tree["left"])
-        self.assertIsNone(tree["right"])
+        tr = gen_bin_tree(height=1, root=10)
+        self.assertIsNone(tr["left"])
+        self.assertIsNone(tr["right"])
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree(height=2, root=10)["left"]["value"], 31)
@@ -72,10 +72,10 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree(height=2, root=10)["right"]["value"], 29)
 
     def test_keys_present(self):
-        tree = gen_bin_tree(height=1, root=10)
-        self.assertIn("value", tree)
-        self.assertIn("left", tree)
-        self.assertIn("right", tree)
+        tr = gen_bin_tree(height=1, root=10)
+        self.assertIn("value", tr)
+        self.assertIn("left", tr)
+        self.assertIn("right", tr)
 
     def test_default_params_root(self):
         self.assertEqual(gen_bin_tree()["value"], 10)
@@ -84,22 +84,22 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(tree_height(gen_bin_tree()), 5)
 
     def test_custom_root(self):
-        tree = gen_bin_tree(height=2, root=5)
-        self.assertEqual(tree["value"], 5)
-        self.assertEqual(tree["left"]["value"],  16)  # 5*3+1
-        self.assertEqual(tree["right"]["value"], 14)  # 3*5-1
+        tr = gen_bin_tree(height=2, root=5)
+        self.assertEqual(tr["value"], 5)
+        self.assertEqual(tr["left"]["value"],  16)  # 5*3+1
+        self.assertEqual(tr["right"]["value"], 14)  # 3*5-1
 
     def test_height_matches_actual(self):
-        for h in range(1, 6):
-            with self.subTest(height=h):
-                self.assertEqual(tree_height(gen_bin_tree(height=h, root=10)), h)
+        for ht in range(1, 6):
+            with self.subTest(height=ht):
+                self.assertEqual(tree_height(gen_bin_tree(height=ht, root=10)), ht)
 
 
 # ---------------------------------------------------------------------------
 # namedtuple
 # ---------------------------------------------------------------------------
 
-class TestGenBinTreeNamedTuple(unittest.TestCase):
+class TestNamedTupleImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_namedtuple(height=0, root=10))
@@ -111,9 +111,9 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
         self.assertEqual(gen_bin_tree_namedtuple(height=1, root=10).value, 10)
 
     def test_leaves_none_at_height_1(self):
-        t = gen_bin_tree_namedtuple(height=1, root=10)
-        self.assertIsNone(t.left)
-        self.assertIsNone(t.right)
+        nd = gen_bin_tree_namedtuple(height=1, root=10)
+        self.assertIsNone(nd.left)
+        self.assertIsNone(nd.right)
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_namedtuple(height=2, root=10).left.value, 31)
@@ -122,9 +122,9 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
         self.assertEqual(gen_bin_tree_namedtuple(height=2, root=10).right.value, 29)
 
     def test_immutability(self):
-        t = gen_bin_tree_namedtuple(height=1, root=10)
+        nd = gen_bin_tree_namedtuple(height=1, root=10)
         with self.assertRaises(AttributeError):
-            t.value = 99
+            nd.value = 99
 
     def test_height_matches_actual(self):
         self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=4, root=10)), 4)
@@ -137,7 +137,7 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
 # OrderedDict
 # ---------------------------------------------------------------------------
 
-class TestGenBinTreeOrderedDict(unittest.TestCase):
+class TestOrderedDictImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_ordered_dict(height=0, root=10))
@@ -149,8 +149,8 @@ class TestGenBinTreeOrderedDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree_ordered_dict(height=1, root=10)["value"], 10)
 
     def test_key_order(self):
-        t = gen_bin_tree_ordered_dict(height=1, root=10)
-        self.assertEqual(list(t.keys()), ["value", "left", "right"])
+        nd = gen_bin_tree_ordered_dict(height=1, root=10)
+        self.assertEqual(list(nd.keys()), ["value", "left", "right"])
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_ordered_dict(height=2, root=10)["left"]["value"], 31)
@@ -169,7 +169,7 @@ class TestGenBinTreeOrderedDict(unittest.TestCase):
 # dataclass
 # ---------------------------------------------------------------------------
 
-class TestGenBinTreeDataclass(unittest.TestCase):
+class TestDataclassImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_dataclass(height=0, root=10))
@@ -181,9 +181,9 @@ class TestGenBinTreeDataclass(unittest.TestCase):
         self.assertEqual(gen_bin_tree_dataclass(height=1, root=10).value, 10)
 
     def test_leaves_none_at_height_1(self):
-        t = gen_bin_tree_dataclass(height=1, root=10)
-        self.assertIsNone(t.left)
-        self.assertIsNone(t.right)
+        nd = gen_bin_tree_dataclass(height=1, root=10)
+        self.assertIsNone(nd.left)
+        self.assertIsNone(nd.right)
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_dataclass(height=2, root=10).left.value, 31)
@@ -192,24 +192,24 @@ class TestGenBinTreeDataclass(unittest.TestCase):
         self.assertEqual(gen_bin_tree_dataclass(height=2, root=10).right.value, 29)
 
     def test_equality(self):
-        t1 = gen_bin_tree_dataclass(height=2, root=10)
-        t2 = gen_bin_tree_dataclass(height=2, root=10)
-        self.assertEqual(t1, t2)
+        nd1 = gen_bin_tree_dataclass(height=2, root=10)
+        nd2 = gen_bin_tree_dataclass(height=2, root=10)
+        self.assertEqual(nd1, nd2)
 
     def test_height_matches_actual(self):
         self.assertEqual(tree_height(gen_bin_tree_dataclass(height=5, root=10)), 5)
 
     def test_default_params(self):
-        t = gen_bin_tree_dataclass()
-        self.assertEqual(t.value, 10)
-        self.assertEqual(tree_height(t), 5)
+        nd = gen_bin_tree_dataclass()
+        self.assertEqual(nd.value, 10)
+        self.assertEqual(tree_height(nd), 5)
 
 
 # ---------------------------------------------------------------------------
 # tree_height
 # ---------------------------------------------------------------------------
 
-class TestTreeHeight(unittest.TestCase):
+class TestHeightCalc(unittest.TestCase):
 
     def test_none_returns_0(self):
         self.assertEqual(tree_height(None), 0)
@@ -224,11 +224,11 @@ class TestTreeHeight(unittest.TestCase):
         self.assertEqual(tree_height(gen_bin_tree_dataclass(height=1, root=10)), 1)
 
     def test_all_implementations_same_height(self):
-        h = 4
-        self.assertEqual(tree_height(gen_bin_tree(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_ordered_dict(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_dataclass(height=h)), h)
+        ht = 4
+        self.assertEqual(tree_height(gen_bin_tree(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_ordered_dict(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_dataclass(height=ht)), ht)
 
     def test_unsupported_type_raises(self):
         with self.assertRaises(TypeError):
@@ -239,7 +239,7 @@ class TestTreeHeight(unittest.TestCase):
 # inorder
 # ---------------------------------------------------------------------------
 
-class TestInorder(unittest.TestCase):
+class TestInorderTraversal(unittest.TestCase):
 
     def test_none_returns_empty(self):
         self.assertEqual(inorder(None), [])

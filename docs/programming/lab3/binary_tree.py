@@ -24,22 +24,22 @@ from typing import Optional, Union
 # Константы варианта
 # ---------------------------------------------------------------------------
 
-_DEFAULT_ROOT: int = 10
-_DEFAULT_HEIGHT: int = 5
+START_ROOT: int = 10
+START_HEIGHT: int = 5
 
 # ---------------------------------------------------------------------------
 # Формулы вычисления потомков (вариант 10)
 # ---------------------------------------------------------------------------
 
 
-def _left(root: int) -> int:
-    """Возвращает значение левого потомка: root * 3 + 1."""
-    return root * 3 + 1
+def calc_left(val: int) -> int:
+    """Возвращает значение левого потомка: val * 3 + 1."""
+    return val * 3 + 1
 
 
-def _right(root: int) -> int:
-    """Возвращает значение правого потомка: 3 * root - 1."""
-    return 3 * root - 1
+def calc_right(val: int) -> int:
+    """Возвращает значение правого потомка: 3 * val - 1."""
+    return 3 * val - 1
 
 
 # ---------------------------------------------------------------------------
@@ -59,11 +59,11 @@ class BinaryTreeNode:
     right: Optional["BinaryTreeNode"] = field(default=None)
 
 
-DictTree = Optional[dict]
-NTTree   = Optional[TreeNode]
-ODTree   = Optional[OrderedDict]
-DCTree   = Optional[BinaryTreeNode]
-AnyTree  = Union[DictTree, NTTree, ODTree, DCTree]
+DTree      = Optional[dict]
+NTupleTree = Optional[TreeNode]
+OdTree     = Optional[OrderedDict]
+DcTree     = Optional[BinaryTreeNode]
+TreeType   = Union[DTree, NTupleTree, OdTree, DcTree]
 
 
 # ---------------------------------------------------------------------------
@@ -72,16 +72,25 @@ AnyTree  = Union[DictTree, NTTree, ODTree, DCTree]
 
 
 def gen_bin_tree(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> DictTree:
-    """Рекурсивно строит дерево в виде вложенных словарей."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> DTree:
+    """Рекурсивно строит дерево в виде вложенных словарей.
+
+    Args:
+        height: Высота дерева. При 0 возвращает None.
+        root:   Значение корневого узла.
+
+    Returns:
+        Словарь вида ``{"value": ..., "left": ..., "right": ...}``
+        или ``None``, если высота равна 0.
+    """
     if height == 0:
         return None
     return {
         "value": root,
-        "left":  gen_bin_tree(height - 1, _left(root)),
-        "right": gen_bin_tree(height - 1, _right(root)),
+        "left":  gen_bin_tree(height - 1, calc_left(root)),
+        "right": gen_bin_tree(height - 1, calc_right(root)),
     }
 
 
@@ -91,16 +100,25 @@ def gen_bin_tree(
 
 
 def gen_bin_tree_namedtuple(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> NTTree:
-    """Рекурсивно строит дерево, используя collections.namedtuple."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> NTupleTree:
+    """Рекурсивно строит дерево, используя collections.namedtuple.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        Именованный кортеж ``TreeNode(value, left, right)``
+        или ``None``, если высота равна 0.
+    """
     if height == 0:
         return None
     return TreeNode(
         value=root,
-        left=gen_bin_tree_namedtuple(height - 1, _left(root)),
-        right=gen_bin_tree_namedtuple(height - 1, _right(root)),
+        left=gen_bin_tree_namedtuple(height - 1, calc_left(root)),
+        right=gen_bin_tree_namedtuple(height - 1, calc_right(root)),
     )
 
 
@@ -110,17 +128,26 @@ def gen_bin_tree_namedtuple(
 
 
 def gen_bin_tree_ordered_dict(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> ODTree:
-    """Рекурсивно строит дерево, используя collections.OrderedDict."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> OdTree:
+    """Рекурсивно строит дерево, используя collections.OrderedDict.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        ``OrderedDict`` с ключами ``value``, ``left``, ``right``
+        или ``None``, если высота равна 0.
+    """
     if height == 0:
         return None
-    node: OrderedDict = OrderedDict()
-    node["value"] = root
-    node["left"]  = gen_bin_tree_ordered_dict(height - 1, _left(root))
-    node["right"] = gen_bin_tree_ordered_dict(height - 1, _right(root))
-    return node
+    od_node: OrderedDict = OrderedDict()
+    od_node["value"] = root
+    od_node["left"]  = gen_bin_tree_ordered_dict(height - 1, calc_left(root))
+    od_node["right"] = gen_bin_tree_ordered_dict(height - 1, calc_right(root))
+    return od_node
 
 
 # ---------------------------------------------------------------------------
@@ -129,16 +156,24 @@ def gen_bin_tree_ordered_dict(
 
 
 def gen_bin_tree_dataclass(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> DCTree:
-    """Рекурсивно строит дерево, используя узлы-dataclass."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> DcTree:
+    """Рекурсивно строит дерево, используя узлы-dataclass.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        Экземпляр ``BinaryTreeNode`` или ``None``, если высота равна 0.
+    """
     if height == 0:
         return None
     return BinaryTreeNode(
         value=root,
-        left=gen_bin_tree_dataclass(height - 1, _left(root)),
-        right=gen_bin_tree_dataclass(height - 1, _right(root)),
+        left=gen_bin_tree_dataclass(height - 1, calc_left(root)),
+        right=gen_bin_tree_dataclass(height - 1, calc_right(root)),
     )
 
 
@@ -147,8 +182,18 @@ def gen_bin_tree_dataclass(
 # ---------------------------------------------------------------------------
 
 
-def tree_height(tree: AnyTree) -> int:
-    """Вычисляет фактическую высоту дерева рекурсивно."""
+def tree_height(tree: TreeType) -> int:
+    """Вычисляет фактическую высоту дерева рекурсивно.
+
+    Args:
+        tree: Дерево в любом из четырёх форматов или ``None``.
+
+    Returns:
+        Целое число — высота дерева (0 для пустого дерева).
+
+    Raises:
+        TypeError: Если передан неподдерживаемый тип.
+    """
     if tree is None:
         return 0
     if isinstance(tree, dict):
@@ -160,8 +205,18 @@ def tree_height(tree: AnyTree) -> int:
     raise TypeError(f"Неподдерживаемый тип дерева: {type(tree)}")
 
 
-def inorder(tree: AnyTree) -> list[int]:
-    """Обходит дерево в порядке in-order (левый → корень → правый)."""
+def inorder(tree: TreeType) -> list[int]:
+    """Обходит дерево в порядке in-order (левый → корень → правый).
+
+    Args:
+        tree: Дерево в любом из четырёх форматов или ``None``.
+
+    Returns:
+        Список значений узлов в порядке in-order.
+
+    Raises:
+        TypeError: Если передан неподдерживаемый тип.
+    """
     if tree is None:
         return []
     if isinstance(tree, dict):
@@ -171,19 +226,25 @@ def inorder(tree: AnyTree) -> list[int]:
     raise TypeError(f"Неподдерживаемый тип дерева: {type(tree)}")
 
 
-def _pretty_print(tree: AnyTree, prefix: str = "", is_left: bool = True) -> None:
-    """Выводит дерево в консоль в виде ASCII-графики."""
+def show_tree(tree: TreeType, prefix: str = "", is_left: bool = True) -> None:
+    """Выводит дерево в консоль в виде ASCII-графики.
+
+    Args:
+        tree:    Дерево для отображения.
+        prefix:  Строка-отступ для текущего уровня.
+        is_left: Признак того, является ли узел левым потомком.
+    """
     if tree is None:
         return
     if isinstance(tree, dict):
-        val, left, right = tree["value"], tree["left"], tree["right"]
+        node_val, l_child, r_child = tree["value"], tree["left"], tree["right"]
     else:
-        val, left, right = tree.value, tree.left, tree.right
-    connector = "|-- " if is_left else "\\-- "
-    print(prefix + connector + str(val))
-    extension = "|   " if is_left else "    "
-    _pretty_print(left,  prefix + extension, is_left=True)
-    _pretty_print(right, prefix + extension, is_left=False)
+        node_val, l_child, r_child = tree.value, tree.left, tree.right
+    branch = "|-- " if is_left else "\\-- "
+    print(prefix + branch + str(node_val))
+    pad = "|   " if is_left else "    "
+    show_tree(l_child, prefix + pad, is_left=True)
+    show_tree(r_child, prefix + pad, is_left=False)
 
 
 # ---------------------------------------------------------------------------
@@ -197,10 +258,10 @@ if __name__ == "__main__":
     print("=" * 60)
 
     print("\n[1] dict (height=3):")
-    tree_dict = gen_bin_tree(height=3, root=10)
-    _pretty_print(tree_dict)
-    print(f"    height  : {tree_height(tree_dict)}")
-    print(f"    in-order: {inorder(tree_dict)}")
+    tree_d = gen_bin_tree(height=3, root=10)
+    show_tree(tree_d)
+    print(f"    height  : {tree_height(tree_d)}")
+    print(f"    in-order: {inorder(tree_d)}")
 
     print("\n[2] namedtuple (height=2):")
     print(f"    {gen_bin_tree_namedtuple(height=2, root=10)}")
@@ -213,6 +274,6 @@ if __name__ == "__main__":
     print(f"    {gen_bin_tree_dataclass(height=2, root=10)}")
 
     print("\n[5] Full tree (height=5):")
-    full = gen_bin_tree()
-    print(f"    height  : {tree_height(full)}")
-    print(f"    in-order (first 7): {inorder(full)[:7]} ...")
+    full_tree = gen_bin_tree()
+    print(f"    height  : {tree_height(full_tree)}")
+    print(f"    in-order (first 7): {inorder(full_tree)[:7]} ...")

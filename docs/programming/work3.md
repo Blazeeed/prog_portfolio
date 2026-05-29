@@ -136,22 +136,22 @@ from typing import Optional, Union
 # Константы варианта
 # ---------------------------------------------------------------------------
 
-_DEFAULT_ROOT: int = 10
-_DEFAULT_HEIGHT: int = 5
+START_ROOT: int = 10
+START_HEIGHT: int = 5
 
 # ---------------------------------------------------------------------------
 # Формулы вычисления потомков (вариант 10)
 # ---------------------------------------------------------------------------
 
 
-def _left(root: int) -> int:
-    """Возвращает значение левого потомка: root * 3 + 1."""
-    return root * 3 + 1
+def calc_left(val: int) -> int:
+    """Возвращает значение левого потомка: val * 3 + 1."""
+    return val * 3 + 1
 
 
-def _right(root: int) -> int:
-    """Возвращает значение правого потомка: 3 * root - 1."""
-    return 3 * root - 1
+def calc_right(val: int) -> int:
+    """Возвращает значение правого потомка: 3 * val - 1."""
+    return 3 * val - 1
 
 
 # ---------------------------------------------------------------------------
@@ -171,11 +171,11 @@ class BinaryTreeNode:
     right: Optional["BinaryTreeNode"] = field(default=None)
 
 
-DictTree = Optional[dict]
-NTTree   = Optional[TreeNode]
-ODTree   = Optional[OrderedDict]
-DCTree   = Optional[BinaryTreeNode]
-AnyTree  = Union[DictTree, NTTree, ODTree, DCTree]
+DTree      = Optional[dict]
+NTupleTree = Optional[TreeNode]
+OdTree     = Optional[OrderedDict]
+DcTree     = Optional[BinaryTreeNode]
+TreeType   = Union[DTree, NTupleTree, OdTree, DcTree]
 
 
 # ---------------------------------------------------------------------------
@@ -184,16 +184,25 @@ AnyTree  = Union[DictTree, NTTree, ODTree, DCTree]
 
 
 def gen_bin_tree(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> DictTree:
-    """Рекурсивно строит дерево в виде вложенных словарей."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> DTree:
+    """Рекурсивно строит дерево в виде вложенных словарей.
+
+    Args:
+        height: Высота дерева. При 0 возвращает None.
+        root:   Значение корневого узла.
+
+    Returns:
+        Словарь вида {"value": ..., "left": ..., "right": ...}
+        или None, если высота равна 0.
+    """
     if height == 0:
         return None
     return {
         "value": root,
-        "left":  gen_bin_tree(height - 1, _left(root)),
-        "right": gen_bin_tree(height - 1, _right(root)),
+        "left":  gen_bin_tree(height - 1, calc_left(root)),
+        "right": gen_bin_tree(height - 1, calc_right(root)),
     }
 
 
@@ -203,16 +212,25 @@ def gen_bin_tree(
 
 
 def gen_bin_tree_namedtuple(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> NTTree:
-    """Рекурсивно строит дерево, используя collections.namedtuple."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> NTupleTree:
+    """Рекурсивно строит дерево, используя collections.namedtuple.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        Именованный кортеж TreeNode(value, left, right)
+        или None, если высота равна 0.
+    """
     if height == 0:
         return None
     return TreeNode(
         value=root,
-        left=gen_bin_tree_namedtuple(height - 1, _left(root)),
-        right=gen_bin_tree_namedtuple(height - 1, _right(root)),
+        left=gen_bin_tree_namedtuple(height - 1, calc_left(root)),
+        right=gen_bin_tree_namedtuple(height - 1, calc_right(root)),
     )
 
 
@@ -222,17 +240,26 @@ def gen_bin_tree_namedtuple(
 
 
 def gen_bin_tree_ordered_dict(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> ODTree:
-    """Рекурсивно строит дерево, используя collections.OrderedDict."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> OdTree:
+    """Рекурсивно строит дерево, используя collections.OrderedDict.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        OrderedDict с ключами value, left, right
+        или None, если высота равна 0.
+    """
     if height == 0:
         return None
-    node: OrderedDict = OrderedDict()
-    node["value"] = root
-    node["left"]  = gen_bin_tree_ordered_dict(height - 1, _left(root))
-    node["right"] = gen_bin_tree_ordered_dict(height - 1, _right(root))
-    return node
+    od_node: OrderedDict = OrderedDict()
+    od_node["value"] = root
+    od_node["left"]  = gen_bin_tree_ordered_dict(height - 1, calc_left(root))
+    od_node["right"] = gen_bin_tree_ordered_dict(height - 1, calc_right(root))
+    return od_node
 
 
 # ---------------------------------------------------------------------------
@@ -241,16 +268,24 @@ def gen_bin_tree_ordered_dict(
 
 
 def gen_bin_tree_dataclass(
-    height: int = _DEFAULT_HEIGHT,
-    root: int = _DEFAULT_ROOT,
-) -> DCTree:
-    """Рекурсивно строит дерево, используя узлы-dataclass."""
+    height: int = START_HEIGHT,
+    root: int = START_ROOT,
+) -> DcTree:
+    """Рекурсивно строит дерево, используя узлы-dataclass.
+
+    Args:
+        height: Высота дерева.
+        root:   Значение корневого узла.
+
+    Returns:
+        Экземпляр BinaryTreeNode или None, если высота равна 0.
+    """
     if height == 0:
         return None
     return BinaryTreeNode(
         value=root,
-        left=gen_bin_tree_dataclass(height - 1, _left(root)),
-        right=gen_bin_tree_dataclass(height - 1, _right(root)),
+        left=gen_bin_tree_dataclass(height - 1, calc_left(root)),
+        right=gen_bin_tree_dataclass(height - 1, calc_right(root)),
     )
 
 
@@ -259,8 +294,18 @@ def gen_bin_tree_dataclass(
 # ---------------------------------------------------------------------------
 
 
-def tree_height(tree: AnyTree) -> int:
-    """Вычисляет фактическую высоту дерева рекурсивно."""
+def tree_height(tree: TreeType) -> int:
+    """Вычисляет фактическую высоту дерева рекурсивно.
+
+    Args:
+        tree: Дерево в любом из четырёх форматов или None.
+
+    Returns:
+        Целое число — высота дерева (0 для пустого дерева).
+
+    Raises:
+        TypeError: Если передан неподдерживаемый тип.
+    """
     if tree is None:
         return 0
     if isinstance(tree, dict):
@@ -272,8 +317,18 @@ def tree_height(tree: AnyTree) -> int:
     raise TypeError(f"Неподдерживаемый тип дерева: {type(tree)}")
 
 
-def inorder(tree: AnyTree) -> list[int]:
-    """Обходит дерево в порядке in-order (левый → корень → правый)."""
+def inorder(tree: TreeType) -> list[int]:
+    """Обходит дерево в порядке in-order (левый → корень → правый).
+
+    Args:
+        tree: Дерево в любом из четырёх форматов или None.
+
+    Returns:
+        Список значений узлов в порядке in-order.
+
+    Raises:
+        TypeError: Если передан неподдерживаемый тип.
+    """
     if tree is None:
         return []
     if isinstance(tree, dict):
@@ -281,6 +336,59 @@ def inorder(tree: AnyTree) -> list[int]:
     if isinstance(tree, (BinaryTreeNode, tuple)):
         return inorder(tree.left) + [tree.value] + inorder(tree.right)
     raise TypeError(f"Неподдерживаемый тип дерева: {type(tree)}")
+
+
+def show_tree(tree: TreeType, prefix: str = "", is_left: bool = True) -> None:
+    """Выводит дерево в консоль в виде ASCII-графики.
+
+    Args:
+        tree:    Дерево для отображения.
+        prefix:  Строка-отступ для текущего уровня.
+        is_left: Признак того, является ли узел левым потомком.
+    """
+    if tree is None:
+        return
+    if isinstance(tree, dict):
+        node_val, l_child, r_child = tree["value"], tree["left"], tree["right"]
+    else:
+        node_val, l_child, r_child = tree.value, tree.left, tree.right
+    branch = "|-- " if is_left else "\\-- "
+    print(prefix + branch + str(node_val))
+    pad = "|   " if is_left else "    "
+    show_tree(l_child, prefix + pad, is_left=True)
+    show_tree(r_child, prefix + pad, is_left=False)
+
+
+# ---------------------------------------------------------------------------
+# Точка входа
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    print("=" * 60)
+    print("Binary tree — variant 10")
+    print("root=10, height=5, left=root*3+1, right=3*root-1")
+    print("=" * 60)
+
+    print("\n[1] dict (height=3):")
+    tree_d = gen_bin_tree(height=3, root=10)
+    show_tree(tree_d)
+    print(f"    height  : {tree_height(tree_d)}")
+    print(f"    in-order: {inorder(tree_d)}")
+
+    print("\n[2] namedtuple (height=2):")
+    print(f"    {gen_bin_tree_namedtuple(height=2, root=10)}")
+
+    print("\n[3] OrderedDict (height=2):")
+    tree_od = gen_bin_tree_ordered_dict(height=2, root=10)
+    print(f"    keys: {list(tree_od.keys())}")
+
+    print("\n[4] dataclass (height=2):")
+    print(f"    {gen_bin_tree_dataclass(height=2, root=10)}")
+
+    print("\n[5] Full tree (height=5):")
+    full_tree = gen_bin_tree()
+    print(f"    height  : {tree_height(full_tree)}")
+    print(f"    in-order (first 7): {inorder(full_tree)[:7]} ...")
 ```
 
 ---
@@ -302,8 +410,8 @@ from collections import OrderedDict
 from binary_tree import (
     BinaryTreeNode,
     TreeNode,
-    _left,
-    _right,
+    calc_left,
+    calc_right,
     gen_bin_tree,
     gen_bin_tree_dataclass,
     gen_bin_tree_namedtuple,
@@ -313,29 +421,29 @@ from binary_tree import (
 )
 
 
-class TestFormulas(unittest.TestCase):
+class TestChildFormulas(unittest.TestCase):
     """Тесты формул вычисления потомков варианта 10."""
 
     def test_left_from_root_10(self):
-        self.assertEqual(_left(10), 31)   # 10*3+1
+        self.assertEqual(calc_left(10), 31)   # 10*3+1
 
     def test_right_from_root_10(self):
-        self.assertEqual(_right(10), 29)  # 3*10-1
+        self.assertEqual(calc_right(10), 29)  # 3*10-1
 
     def test_left_from_root_1(self):
-        self.assertEqual(_left(1), 4)     # 1*3+1
+        self.assertEqual(calc_left(1), 4)     # 1*3+1
 
     def test_right_from_root_1(self):
-        self.assertEqual(_right(1), 2)    # 3*1-1
+        self.assertEqual(calc_right(1), 2)    # 3*1-1
 
     def test_left_from_root_0(self):
-        self.assertEqual(_left(0), 1)     # 0*3+1
+        self.assertEqual(calc_left(0), 1)     # 0*3+1
 
     def test_right_from_root_0(self):
-        self.assertEqual(_right(0), -1)   # 3*0-1
+        self.assertEqual(calc_right(0), -1)   # 3*0-1
 
 
-class TestGenBinTreeDict(unittest.TestCase):
+class TestDictImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree(height=0, root=10))
@@ -347,9 +455,9 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree(height=1, root=10)["value"], 10)
 
     def test_leaves_none_at_height_1(self):
-        tree = gen_bin_tree(height=1, root=10)
-        self.assertIsNone(tree["left"])
-        self.assertIsNone(tree["right"])
+        tr = gen_bin_tree(height=1, root=10)
+        self.assertIsNone(tr["left"])
+        self.assertIsNone(tr["right"])
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree(height=2, root=10)["left"]["value"], 31)
@@ -358,10 +466,10 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree(height=2, root=10)["right"]["value"], 29)
 
     def test_keys_present(self):
-        tree = gen_bin_tree(height=1, root=10)
-        self.assertIn("value", tree)
-        self.assertIn("left", tree)
-        self.assertIn("right", tree)
+        tr = gen_bin_tree(height=1, root=10)
+        self.assertIn("value", tr)
+        self.assertIn("left", tr)
+        self.assertIn("right", tr)
 
     def test_default_params_root(self):
         self.assertEqual(gen_bin_tree()["value"], 10)
@@ -370,18 +478,18 @@ class TestGenBinTreeDict(unittest.TestCase):
         self.assertEqual(tree_height(gen_bin_tree()), 5)
 
     def test_custom_root(self):
-        tree = gen_bin_tree(height=2, root=5)
-        self.assertEqual(tree["value"], 5)
-        self.assertEqual(tree["left"]["value"],  16)  # 5*3+1
-        self.assertEqual(tree["right"]["value"], 14)  # 3*5-1
+        tr = gen_bin_tree(height=2, root=5)
+        self.assertEqual(tr["value"], 5)
+        self.assertEqual(tr["left"]["value"],  16)  # 5*3+1
+        self.assertEqual(tr["right"]["value"], 14)  # 3*5-1
 
     def test_height_matches_actual(self):
-        for h in range(1, 6):
-            with self.subTest(height=h):
-                self.assertEqual(tree_height(gen_bin_tree(height=h, root=10)), h)
+        for ht in range(1, 6):
+            with self.subTest(height=ht):
+                self.assertEqual(tree_height(gen_bin_tree(height=ht, root=10)), ht)
 
 
-class TestGenBinTreeNamedTuple(unittest.TestCase):
+class TestNamedTupleImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_namedtuple(height=0, root=10))
@@ -393,9 +501,9 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
         self.assertEqual(gen_bin_tree_namedtuple(height=1, root=10).value, 10)
 
     def test_leaves_none_at_height_1(self):
-        t = gen_bin_tree_namedtuple(height=1, root=10)
-        self.assertIsNone(t.left)
-        self.assertIsNone(t.right)
+        nd = gen_bin_tree_namedtuple(height=1, root=10)
+        self.assertIsNone(nd.left)
+        self.assertIsNone(nd.right)
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_namedtuple(height=2, root=10).left.value, 31)
@@ -404,9 +512,9 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
         self.assertEqual(gen_bin_tree_namedtuple(height=2, root=10).right.value, 29)
 
     def test_immutability(self):
-        t = gen_bin_tree_namedtuple(height=1, root=10)
+        nd = gen_bin_tree_namedtuple(height=1, root=10)
         with self.assertRaises(AttributeError):
-            t.value = 99
+            nd.value = 99
 
     def test_height_matches_actual(self):
         self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=4, root=10)), 4)
@@ -415,7 +523,7 @@ class TestGenBinTreeNamedTuple(unittest.TestCase):
         self.assertEqual(gen_bin_tree_namedtuple().value, 10)
 
 
-class TestGenBinTreeOrderedDict(unittest.TestCase):
+class TestOrderedDictImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_ordered_dict(height=0, root=10))
@@ -427,8 +535,8 @@ class TestGenBinTreeOrderedDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree_ordered_dict(height=1, root=10)["value"], 10)
 
     def test_key_order(self):
-        t = gen_bin_tree_ordered_dict(height=1, root=10)
-        self.assertEqual(list(t.keys()), ["value", "left", "right"])
+        nd = gen_bin_tree_ordered_dict(height=1, root=10)
+        self.assertEqual(list(nd.keys()), ["value", "left", "right"])
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_ordered_dict(height=2, root=10)["left"]["value"], 31)
@@ -443,7 +551,7 @@ class TestGenBinTreeOrderedDict(unittest.TestCase):
         self.assertEqual(gen_bin_tree_ordered_dict()["value"], 10)
 
 
-class TestGenBinTreeDataclass(unittest.TestCase):
+class TestDataclassImpl(unittest.TestCase):
 
     def test_height_zero_returns_none(self):
         self.assertIsNone(gen_bin_tree_dataclass(height=0, root=10))
@@ -455,9 +563,9 @@ class TestGenBinTreeDataclass(unittest.TestCase):
         self.assertEqual(gen_bin_tree_dataclass(height=1, root=10).value, 10)
 
     def test_leaves_none_at_height_1(self):
-        t = gen_bin_tree_dataclass(height=1, root=10)
-        self.assertIsNone(t.left)
-        self.assertIsNone(t.right)
+        nd = gen_bin_tree_dataclass(height=1, root=10)
+        self.assertIsNone(nd.left)
+        self.assertIsNone(nd.right)
 
     def test_left_child_value(self):
         self.assertEqual(gen_bin_tree_dataclass(height=2, root=10).left.value, 31)
@@ -466,20 +574,20 @@ class TestGenBinTreeDataclass(unittest.TestCase):
         self.assertEqual(gen_bin_tree_dataclass(height=2, root=10).right.value, 29)
 
     def test_equality(self):
-        t1 = gen_bin_tree_dataclass(height=2, root=10)
-        t2 = gen_bin_tree_dataclass(height=2, root=10)
-        self.assertEqual(t1, t2)
+        nd1 = gen_bin_tree_dataclass(height=2, root=10)
+        nd2 = gen_bin_tree_dataclass(height=2, root=10)
+        self.assertEqual(nd1, nd2)
 
     def test_height_matches_actual(self):
         self.assertEqual(tree_height(gen_bin_tree_dataclass(height=5, root=10)), 5)
 
     def test_default_params(self):
-        t = gen_bin_tree_dataclass()
-        self.assertEqual(t.value, 10)
-        self.assertEqual(tree_height(t), 5)
+        nd = gen_bin_tree_dataclass()
+        self.assertEqual(nd.value, 10)
+        self.assertEqual(tree_height(nd), 5)
 
 
-class TestTreeHeight(unittest.TestCase):
+class TestHeightCalc(unittest.TestCase):
 
     def test_none_returns_0(self):
         self.assertEqual(tree_height(None), 0)
@@ -494,18 +602,18 @@ class TestTreeHeight(unittest.TestCase):
         self.assertEqual(tree_height(gen_bin_tree_dataclass(height=1, root=10)), 1)
 
     def test_all_implementations_same_height(self):
-        h = 4
-        self.assertEqual(tree_height(gen_bin_tree(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_ordered_dict(height=h)), h)
-        self.assertEqual(tree_height(gen_bin_tree_dataclass(height=h)), h)
+        ht = 4
+        self.assertEqual(tree_height(gen_bin_tree(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_namedtuple(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_ordered_dict(height=ht)), ht)
+        self.assertEqual(tree_height(gen_bin_tree_dataclass(height=ht)), ht)
 
     def test_unsupported_type_raises(self):
         with self.assertRaises(TypeError):
             tree_height("not a tree")
 
 
-class TestInorder(unittest.TestCase):
+class TestInorderTraversal(unittest.TestCase):
 
     def test_none_returns_empty(self):
         self.assertEqual(inorder(None), [])
@@ -544,24 +652,24 @@ if __name__ == "__main__":
 
 ## Результаты тестирования
 
-### TestFormulas — формулы потомков (6 тестов)
+### TestChildFormulas — формулы потомков (6 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
-| 1 | `test_left_from_root_10` | `_left(10) == 31` | ✅ OK |
-| 2 | `test_right_from_root_10` | `_right(10) == 29` | ✅ OK |
-| 3 | `test_left_from_root_1` | `_left(1) == 4` | ✅ OK |
-| 4 | `test_right_from_root_1` | `_right(1) == 2` | ✅ OK |
-| 5 | `test_left_from_root_0` | `_left(0) == 1` | ✅ OK |
-| 6 | `test_right_from_root_0` | `_right(0) == -1` | ✅ OK |
+| 1 | `test_left_from_root_10` | `calc_left(10) == 31` | ✅ OK |
+| 2 | `test_right_from_root_10` | `calc_right(10) == 29` | ✅ OK |
+| 3 | `test_left_from_root_1` | `calc_left(1) == 4` | ✅ OK |
+| 4 | `test_right_from_root_1` | `calc_right(1) == 2` | ✅ OK |
+| 5 | `test_left_from_root_0` | `calc_left(0) == 1` | ✅ OK |
+| 6 | `test_right_from_root_0` | `calc_right(0) == -1` | ✅ OK |
 
-### TestGenBinTreeDict — dict (11 тестов)
+### TestDictImpl — dict (11 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
 | 1 | `test_height_zero_returns_none` | height=0 → None | ✅ OK |
 | 2 | `test_returns_dict` | height=1 → dict | ✅ OK |
-| 3 | `test_root_value` | `tree["value"] == 10` | ✅ OK |
+| 3 | `test_root_value` | `tr["value"] == 10` | ✅ OK |
 | 4 | `test_leaves_none_at_height_1` | left и right — None | ✅ OK |
 | 5 | `test_left_child_value` | левый потомок == 31 | ✅ OK |
 | 6 | `test_right_child_value` | правый потомок == 29 | ✅ OK |
@@ -571,7 +679,7 @@ if __name__ == "__main__":
 | 10 | `test_custom_root` | root=5: left=16, right=14 | ✅ OK |
 | 11 | `test_height_matches_actual` | высота 1..5 соответствует | ✅ OK |
 
-### TestGenBinTreeNamedTuple — namedtuple (9 тестов)
+### TestNamedTupleImpl — namedtuple (9 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
@@ -585,7 +693,7 @@ if __name__ == "__main__":
 | 8 | `test_height_matches_actual` | высота == 4 | ✅ OK |
 | 9 | `test_default_params_root` | корень по умолчанию == 10 | ✅ OK |
 
-### TestGenBinTreeOrderedDict — OrderedDict (8 тестов)
+### TestOrderedDictImpl — OrderedDict (8 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
@@ -598,7 +706,7 @@ if __name__ == "__main__":
 | 7 | `test_height_matches_actual` | высота == 3 | ✅ OK |
 | 8 | `test_default_params_root` | корень по умолчанию == 10 | ✅ OK |
 
-### TestGenBinTreeDataclass — dataclass (9 тестов)
+### TestDataclassImpl — dataclass (9 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
@@ -612,7 +720,7 @@ if __name__ == "__main__":
 | 8 | `test_height_matches_actual` | высота == 5 | ✅ OK |
 | 9 | `test_default_params` | root=10, height=5 | ✅ OK |
 
-### TestTreeHeight — tree_height (6 тестов)
+### TestHeightCalc — tree_height (6 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
@@ -623,7 +731,7 @@ if __name__ == "__main__":
 | 5 | `test_all_implementations_same_height` | все 4 типа: h=4 | ✅ OK |
 | 6 | `test_unsupported_type_raises` | строка → TypeError | ✅ OK |
 
-### TestInorder — inorder (8 тестов)
+### TestInorderTraversal — inorder (8 тестов)
 
 | № | Тест | Проверка | Результат |
 |---|------|----------|-----------|
@@ -660,7 +768,7 @@ OK
 
 ```
 lab3/
-├── binary_tree.py       # Четыре реализации + tree_height + inorder
+├── binary_tree.py       # Четыре реализации + tree_height + inorder + show_tree
 └── test_binary_tree.py  # 57 тестов (7 классов)
 ```
 
@@ -675,7 +783,7 @@ lab3/
 * `gen_bin_tree_ordered_dict()` — `OrderedDict` с фиксированным порядком ключей;
 * `gen_bin_tree_dataclass()` — класс `BinaryTreeNode` с `@dataclass`.
 
-Реализованы вспомогательные функции `tree_height()` и `inorder()`, поддерживающие все четыре типа. Разработаны **57 модульных тестов** в 7 классах, покрывающих формулы потомков, все реализации, граничные случаи и обработку ошибок.
+Реализованы вспомогательные функции `tree_height()`, `inorder()` и `show_tree()`, поддерживающие все четыре типа. Разработаны **57 модульных тестов** в 7 классах, покрывающих формулы потомков, все реализации, граничные случаи и обработку ошибок.
 
 ---
 
